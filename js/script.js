@@ -60,10 +60,16 @@ function checkGhosts() {
     });
 }
 
-function toggleEvidence(state) {
-    var elements = document.getElementsByClassName("ghost-evidence");
+function toggleClasses(elementClass, state, shownDisplayValue) {
+    var elements = document.getElementsByClassName(elementClass);
 
     Array.prototype.forEach.call(elements, function(element) {
-        element.style.display = (state === states.yes ? "block" : "none");
+        console.log(element);
+        element.style.display = (state === states.yes ? shownDisplayValue : "none");
     });
+}
+
+function toggleId(elementId, state, shownDisplayValue) {
+    var element = document.getElementById(elementId);
+    element.style.display = (state === states.yes ? shownDisplayValue : "none");
 }

@@ -3,10 +3,6 @@
         width: 65%;
     }
 
-    #evidence-toggle {
-        font-size: $evidence-font-size;
-    }
-
     ul {
         list-style-position: inside;
         list-style-type: none;
@@ -28,7 +24,7 @@
                 margin-top: $list-item-margin;
                 margin-left: $list-margin * 2;
                 display: none;
-                font-size: $evidence-font-size;
+                font-size: $link-font-size;
                 background-color: $light-blue;
 
                 span {

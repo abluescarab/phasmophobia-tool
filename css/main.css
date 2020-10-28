@@ -45,6 +45,8 @@ label {
 
 a {
   color: #336699;
+  font-weight: normal;
+  font-size: 0.9em;
 }
 
 a:visited {
@@ -136,11 +138,12 @@ button.tristate:active {
   }
 }
 
-#left h2 {
+#left .header {
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
-#left > div {
+#left div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,7 +153,11 @@ button.tristate:active {
           flex-direction: column;
 }
 
-#left > div .evidence-button, #left > div .equipment-checkbox {
+#left div #equipment-checkboxes {
+  display: none;
+}
+
+#left div .evidence-button, #left div .equipment-checkbox {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: max-content max-content;
@@ -164,10 +171,6 @@ button.tristate:active {
   #right {
     width: 65%;
   }
-}
-
-#right #evidence-toggle {
-  font-size: 0.9em;
 }
 
 #right ul {

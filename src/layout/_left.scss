@@ -4,13 +4,18 @@
         margin-right: $column-margin;
     }
 
-    h2 {
+    .header {
         margin-bottom: $grid-gap;
+        font-weight: bold;
     }
 
-    & > div {
+    div {
         display: flex;
         flex-direction: column;
+
+        #equipment-checkboxes {
+            display: none;
+        }
 
         .evidence-button, .equipment-checkbox {
             display: grid;
