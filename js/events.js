@@ -3,6 +3,7 @@ document.getElementById("show-evidence").addEventListener("click", function(evt)
         states.no : states.yes);
 
     evt.target.dataset.state = newState.data;
+    evt.target.textContent = (newState.data === states.yes.data ? "hide evidence" : "show evidence");
     toggleEvidence(newState);
 });
 
