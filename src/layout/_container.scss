@@ -1,12 +1,14 @@
 #container {
-    max-width: 500px;
-    margin: 10px auto;
+    max-width: $container-size;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    background-color: blue;
+    width: auto;
 
     #reset-button {
         clear: both;
         text-align: center;
-        margin-bottom: 10px;
+        margin-bottom: $column-margin;
     }
 }

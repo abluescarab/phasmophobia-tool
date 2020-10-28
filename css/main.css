@@ -4,7 +4,7 @@
 }
 
 body {
-  margin: 10px 0;
+  margin: 10px;
 }
 
 * {
@@ -48,18 +48,24 @@ button.tristate:active {
 }
 
 .column {
-  width: 50%;
-  float: left;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-.column:first-of-type {
-  width: calc(50% - 10px);
-  margin-right: 10px;
+@media (min-width: 500px) {
+  .column {
+    float: left;
+    width: 50%;
+  }
+  .column:first-of-type {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+  }
 }
 
 #container {
   max-width: 500px;
-  margin: 10px auto;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,6 +73,8 @@ button.tristate:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: blue;
+  width: auto;
 }
 
 #container #reset-button {

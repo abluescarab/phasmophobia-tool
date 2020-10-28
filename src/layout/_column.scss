@@ -1,9 +1,14 @@
 .column {
-    width: 50%;
-    float: left;
+    width: 100%;
+    margin-bottom: $column-margin;
 
-    &:first-of-type {
-        width: calc(50% - #{$column-margin});
-        margin-right: $column-margin;
+    @include desktop {
+        float: left;
+        width: 50%;
+
+        &:first-of-type {
+            width: calc(50% - #{$column-margin});
+            margin-right: $column-margin;
+        }
     }
 }
