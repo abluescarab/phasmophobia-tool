@@ -84,59 +84,64 @@ button.tristate:active {
   margin-bottom: 10px;
 }
 
-#evidence {
+@media (min-width: 700px) {
+  #left {
+    width: calc(35% - 10px);
+    margin-right: 10px;
+  }
+}
+
+#left h2 {
+  margin-bottom: 5px;
+}
+
+#left div {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: max-content max-content;
       grid-template-columns: -webkit-max-content -webkit-max-content;
       grid-template-columns: max-content max-content;
   grid-gap: 5px;
+  margin-bottom: 5px;
 }
 
 @media (min-width: 700px) {
-  #evidence {
-    width: calc(35% - 10px);
-    margin-right: 10px;
-  }
-}
-
-@media (min-width: 700px) {
-  div#ghosts {
+  #right {
     width: 65%;
   }
 }
 
-div#ghosts #show-evidence {
-  font-size: 0.8em;
+#right #show-evidence {
+  font-size: 0.9em;
 }
 
-div#ghosts ul {
+#right ul {
   list-style-position: inside;
   list-style-type: none;
 }
 
-div#ghosts ul li {
-  margin-left: 10px;
+#right ul li {
+  padding-left: 10px;
+  padding-bottom: 3px;
 }
 
-div#ghosts ul li::before {
+#right ul li::before {
   content: "\2022";
 }
 
-div#ghosts ul li .ghost-type {
+#right ul li .ghost-type {
   margin-left: 10px;
+  font-weight: bold;
 }
 
-div#ghosts ul li .evidence {
+#right ul li .ghost-evidence {
+  margin-top: 3px;
   margin-left: 20px;
   display: none;
-  font-size: 0.8em;
+  font-size: 0.9em;
+  background-color: #EBFFFF;
 }
 
-div#ghosts ul li .evidence span {
+#right ul li .ghost-evidence span {
   font-size: 1em;
-}
-
-div#ghosts ul li .evidence span:not(:last-child):after {
-  content: ", ";
 }

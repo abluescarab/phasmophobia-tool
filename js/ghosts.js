@@ -61,7 +61,7 @@ function checkGhosts() {
 }
 
 function toggleEvidence(state) {
-    var elements = document.getElementsByClassName("evidence");
+    var elements = document.getElementsByClassName("ghost-evidence");
 
     Array.prototype.forEach.call(elements, function(element) {
         element.style.display = (state === states.yes ? "block" : "none");

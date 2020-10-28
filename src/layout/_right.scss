@@ -1,4 +1,4 @@
-div#ghosts {
+#right {
     @include desktop {
         width: 65%;
     }
@@ -12,7 +12,8 @@ div#ghosts {
         list-style-type: none;
 
         li {
-            margin-left: $list-margin;
+            padding-left: $list-margin;
+            padding-bottom: $list-item-margin;
 
             &::before {
                 content: "\2022";
@@ -20,18 +21,17 @@ div#ghosts {
 
             .ghost-type {
                 margin-left: $list-margin;
+                font-weight: bold;
             }
 
-            .evidence {
+            .ghost-evidence {
+                margin-top: $list-item-margin;
                 margin-left: $list-margin * 2;
                 display: none;
                 font-size: $evidence-font-size;
+                background-color: #EBFFFF;
 
                 span {
-                    &:not(:last-child):after {
-                        content: ", ";
-                    }
-
                     font-size: 1em;
                 }
             }
