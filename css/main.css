@@ -17,6 +17,25 @@ button:not(.tristate) {
   min-width: 100px;
 }
 
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #777;
+  border-radius: 3px;
+  outline: none;
+  line-height: 20px;
+  font-size: 19px;
+  font-weight: bold;
+  text-align: center;
+}
+
+input[type="checkbox"]:active {
+  border: 1px solid #aaa;
+  background-color: #fefefe;
+}
+
 label {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -121,7 +140,17 @@ button.tristate:active {
   margin-bottom: 5px;
 }
 
-#left div {
+#left > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#left > div .evidence-button, #left > div .equipment-checkbox {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: max-content max-content;
@@ -137,7 +166,7 @@ button.tristate:active {
   }
 }
 
-#right #show-evidence {
+#right #evidence-toggle {
   font-size: 0.9em;
 }
 

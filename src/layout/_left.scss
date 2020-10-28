@@ -8,10 +8,15 @@
         margin-bottom: $grid-gap;
     }
 
-    div {
-        display: grid;
-        grid-template-columns: max-content max-content;
-        grid-gap: $grid-gap;
-        margin-bottom: $grid-gap;
+    & > div {
+        display: flex;
+        flex-direction: column;
+
+        .evidence-button, .equipment-checkbox {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            grid-gap: $grid-gap;
+            margin-bottom: $grid-gap;
+        }
     }
 }

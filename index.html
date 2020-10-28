@@ -21,50 +21,130 @@
             </div>
 
             <form id="alone-everyone">
+                <input type="radio" name="ghost-group" id="everyone" checked>
+                <label for="everyone">Everyone</label>
+
                 <input type="radio" name="ghost-group" id="alone">
                 <label for="alone">Alone</label>
-
-                <input type="radio" name="ghost-group" id="everyone">
-                <label for="everyone">Everyone</label>
             </form>
         </div>
 
         <div id="columns">
             <div class="column" id="left">
-                <h2>Evidence</h2>
-                <div class="evidence-button">
-                    <button id="emf-level-5" class="tristate" data-state="none"></button>
-                    <label for="emf-level-5">EMF Level 5</label>
+                <div id="evidence-buttons">
+                    <h2>Evidence</h2>
+                    <div class="evidence-button">
+                        <button id="emf-level-5" class="tristate" data-state="none"></button>
+                        <label for="emf-level-5">EMF Level 5</label>
+                    </div>
+
+                    <div class="evidence-button">
+                        <button id="spirit-box" class="tristate" data-state="none"></button>
+                        <label for="spirit-box">Spirit Box</label>
+                    </div>
+
+                    <div class="evidence-button">
+                        <button id="fingerprints" class="tristate" data-state="none"></button>
+                        <label for="fingerprints">Fingerprints</label>
+                    </div>
+
+                    <div class="evidence-button">
+                        <button id="ghost-orbs" class="tristate" data-state="none"></button>
+                        <label for="ghost-orbs">Ghost Orbs</label>
+                    </div>
+
+                    <div class="evidence-button">
+                        <button id="ghost-writing" class="tristate" data-state="none"></button>
+                        <label for="ghost-writing">Ghost Writing</label>
+                    </div>
+
+                    <div class="evidence-button">
+                        <button id="freezing-temperatures" class="tristate" data-state="none"></button>
+                        <label for="freezing-temperatures">Freezing Temperatures</label>
+                    </div>
                 </div>
 
-                <div class="evidence-button">
-                    <button id="spirit-box" class="tristate" data-state="none"></button>
-                    <label for="spirit-box">Spirit Box</label>
-                </div>
+                <div id="equipment-buttons">
+                    <h2>Used Equipment</h2>
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-emf-reader"/>
+                        <label for="equipment-emf-reader">EMF Reader</label>
+                    </div>
 
-                <div class="evidence-button">
-                    <button id="fingerprints" class="tristate" data-state="none"></button>
-                    <label for="fingerprints">Fingerprints</label>
-                </div>
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-spirit-box"/>
+                        <label for="equipment-spirit-box">Spirit Box</label>
+                    </div>
 
-                <div class="evidence-button">
-                    <button id="ghost-orbs" class="tristate" data-state="none"></button>
-                    <label for="ghost-orbs">Ghost Orbs</label>
-                </div>
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-uv-flashlight"/>
+                        <label for="equipment-uv-flashlight">UV Flashlight</label>
+                    </div>
 
-                <div class="evidence-button">
-                    <button id="ghost-writing" class="tristate" data-state="none"></button>
-                    <label for="ghost-writing">Ghost Writing</label>
-                </div>
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-glow-stick"/>
+                        <label for="equipment-glow-stick">Glow Stick</label>
+                    </div>
 
-                <div class="evidence-button">
-                    <button id="freezing-temperatures" class="tristate" data-state="none"></button>
-                    <label for="freezing-temperatures">Freezing Temperatures</label>
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-video-camera"/>
+                        <label for="equipment-video-camera">Video Camera</label>
+                    </div>
+
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-ghost-writing-book"/>
+                        <label for="equipment-ghost-writing-book">Ghost Writing Book</label>
+                    </div>
+
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-thermometer"/>
+                        <label for="equipment-thermometer">Thermometer</label>
+                    </div>
+
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-parabolic-microphone"/>
+                        <label for="equipment-parabolic-microphone">Parabolic Microphone</label>
+                    </div>
+
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-motion-sensor"/>
+                        <label for="equipment-motion-sensor">Motion Sensor</label>
+                    </div>
+
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-sound-sensor"/>
+                        <label for="equipment-sound-sensor">Sound Sensor</label>
+                    </div>
+
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-ir-sensor"/>
+                        <label for="equipment-ir-sensor">Infrared Light Sensor</label>
+                    </div>
+
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-smudge-stick"/>
+                        <label for="equipment-smudge-stick">Smudge Stick</label>
+                    </div>
+
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-crucifix"/>
+                        <label for="equipment-crucifix">Crucifix</label>
+                    </div>
+
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-salt"/>
+                        <label for="equipment-salt">Salt</label>
+                    </div>
+
+                    <div class="equipment-checkbox">
+                        <input type="checkbox" id="equipment-sanity-pills"/>
+                        <label for="equipment-sanity-pills">Sanity Pills</label>
+                    </div>
                 </div>
             </div>
 
             <div class="column" id="right">
-                <p>Possibilities: <a href="#" data-state="no" id="show-evidence">show evidence</a></p>
+                <p>Possibilities: <a href="#" data-state="no" id="evidence-toggle">show evidence</a></p>
                 <ul>
                     <li id="spirit" class="ghost">
                         <span class="ghost-type">Spirit</span>
