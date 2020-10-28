@@ -73,7 +73,6 @@ button.tristate:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: auto;
 }
 
 #container #reset-button {
