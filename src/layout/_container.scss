@@ -1,0 +1,12 @@
+#container {
+    max-width: 500px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+
+    #reset-button {
+        clear: both;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}

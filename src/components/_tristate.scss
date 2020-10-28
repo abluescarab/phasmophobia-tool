@@ -1,0 +1,21 @@
+button.tristate {
+    user-select: none;
+    width: $button-size;
+    height: $button-size;
+    padding: 0;
+
+    background-color: #f9f9f9;
+    border: 1px solid #777;
+    border-radius: 3px;
+    outline: none;
+
+    line-height: $button-size;
+    font-size: $button-font-size;
+    font-weight: bold;
+    text-align: center;
+
+    &:active {
+        border: 1px solid #aaa;
+        background-color: #fefefe;
+    }
+}

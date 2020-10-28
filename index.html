@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phasmophobia Tool</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+    <div id="container">
+        <div id="reset-button">
+            <button id="reset">Reset</button>
+        </div>
+        <div id="columns">
+            <div class="column" id="evidence">
+                <button id="emf-level-5" class="tristate" data-state="none"></button>
+                <label for="emf-level-5">EMF Level 5</label>
+
+                <button id="spirit-box" class="tristate" data-state="none"></button>
+                <label for="spirit-box">Spirit Box</label>
+
+                <button id="freezing-temperatures" class="tristate" data-state="none"></button>
+                <label for="freezing-temperatures">Freezing Temperatures</label>
+
+                <button id="fingerprints" class="tristate" data-state="none"></button>
+                <label for="fingerprints">Fingerprints</label>
+
+                <button id="ghost-orbs" class="tristate" data-state="none"></button>
+                <label for="ghost-orbs">Ghost Orbs</label>
+
+                <button id="ghost-writing" class="tristate" data-state="none"></button>
+                <label for="ghost-writing">Ghost Writing</label>
+            </div>
+
+            <div class="column" id="ghosts">
+                <p>Possibilities:</p>
+                <ul>
+                    <li id="spirit"><span>Spirit</span></li>
+                    <li id="wraith"><span>Wraith</span></li>
+                    <li id="phantom"><span>Phantom</span></li>
+                    <li id="poltergeist"><span>Poltergeist</span></li>
+                    <li id="banshee"><span>Banshee</span></li>
+                    <li id="jinn"><span>Jinn</span></li>
+                    <li id="mare"><span>Mare</span></li>
+                    <li id="revenant"><span>Revenant</span></li>
+                    <li id="shade"><span>Shade</span></li>
+                    <li id="demon"><span>Demon</span></li>
+                    <li id="yurei"><span>Yurei</span></li>
+                    <li id="oni"><span>Oni</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/tristate.js"></script>
+    <script src="js/reset.js"></script>
+</body>
+</html>

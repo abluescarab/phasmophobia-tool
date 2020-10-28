@@ -1,0 +1,18 @@
+div#ghosts {
+    ul {
+        list-style-position: inside;
+        list-style-type: none;
+
+        li {
+            margin-left: 10px;
+
+            &::before {
+                content: "\2022";
+            }
+
+            span {
+                margin-left: 10px;
+            }
+        }
+    }
+}

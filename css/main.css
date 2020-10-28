@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 10px 0;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+button:not(.tristate) {
+  padding: 3px;
+  min-width: 100px;
+}
+
+label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+button.tristate {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #777;
+  border-radius: 3px;
+  outline: none;
+  line-height: 20px;
+  font-size: 19px;
+  font-weight: bold;
+  text-align: center;
+}
+
+button.tristate:active {
+  border: 1px solid #aaa;
+  background-color: #fefefe;
+}
+
+.column {
+  width: 50%;
+  float: left;
+}
+
+.column:first-of-type {
+  width: calc(50% - 10px);
+  margin-right: 10px;
+}
+
+#container {
+  max-width: 500px;
+  margin: 10px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#container #reset-button {
+  clear: both;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#evidence {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: max-content max-content;
+      grid-template-columns: -webkit-max-content -webkit-max-content;
+      grid-template-columns: max-content max-content;
+  grid-gap: 5px;
+}
+
+div#ghosts ul {
+  list-style-position: inside;
+  list-style-type: none;
+}
+
+div#ghosts ul li {
+  margin-left: 10px;
+}
+
+div#ghosts ul li::before {
+  content: "\2022";
+}
+
+div#ghosts ul li span {
+  margin-left: 10px;
+}
