@@ -1,0 +1,30 @@
+ul {
+    list-style-position: inside;
+    list-style-type: none;
+
+    li {
+        padding-left: $list-margin;
+        padding-bottom: $list-item-margin;
+
+        &::before {
+            content: "\2022";
+        }
+
+        .ghost-type {
+            margin-left: $list-margin;
+            font-weight: bold;
+        }
+
+        .ghost-evidence {
+            margin-top: $list-item-margin;
+            margin-left: $list-margin * 2;
+            display: none;
+            font-size: $link-font-size;
+            background-color: $light-blue;
+
+            span {
+                font-size: 1em;
+            }
+        }
+    }
+}

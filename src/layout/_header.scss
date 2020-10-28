@@ -1,0 +1,12 @@
+header {
+    margin-bottom: $column-margin;
+
+    h1 {
+        float: left;
+        line-height: $button-size;
+    }
+
+    button {
+        float: right;
+    }
+}

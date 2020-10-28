@@ -13,7 +13,7 @@ body {
 }
 
 button:not(.tristate) {
-  padding: 3px;
+  height: 30px;
   min-width: 100px;
 }
 
@@ -76,6 +76,37 @@ button.tristate:active {
   background-color: #fefefe;
 }
 
+ul {
+  list-style-position: inside;
+  list-style-type: none;
+}
+
+ul li {
+  padding-left: 10px;
+  padding-bottom: 3px;
+}
+
+ul li::before {
+  content: "\2022";
+}
+
+ul li .ghost-type {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+ul li .ghost-evidence {
+  margin-top: 3px;
+  margin-left: 20px;
+  display: none;
+  font-size: 0.9em;
+  background-color: #EBFFFF;
+}
+
+ul li .ghost-evidence span {
+  font-size: 1em;
+}
+
 .column {
   width: 100%;
   margin-bottom: 10px;
@@ -97,12 +128,6 @@ button.tristate:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-#container #reset-button {
-  clear: both;
-  text-align: center;
-  margin-bottom: 10px;
 }
 
 #container #ghost-info {
@@ -129,6 +154,19 @@ button.tristate:active {
 
 #container #ghost-info #name {
   margin-right: 10px;
+}
+
+header {
+  margin-bottom: 10px;
+}
+
+header h1 {
+  float: left;
+  line-height: 30px;
+}
+
+header button {
+  float: right;
 }
 
 @media (min-width: 700px) {
@@ -171,35 +209,4 @@ button.tristate:active {
   #right {
     width: 65%;
   }
-}
-
-#right ul {
-  list-style-position: inside;
-  list-style-type: none;
-}
-
-#right ul li {
-  padding-left: 10px;
-  padding-bottom: 3px;
-}
-
-#right ul li::before {
-  content: "\2022";
-}
-
-#right ul li .ghost-type {
-  margin-left: 10px;
-  font-weight: bold;
-}
-
-#right ul li .ghost-evidence {
-  margin-top: 3px;
-  margin-left: 20px;
-  display: none;
-  font-size: 0.9em;
-  background-color: #EBFFFF;
-}
-
-#right ul li .ghost-evidence span {
-  font-size: 1em;
 }

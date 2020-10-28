@@ -4,12 +4,6 @@
     display: flex;
     flex-direction: column;
 
-    #reset-button {
-        clear: both;
-        text-align: center;
-        margin-bottom: $column-margin;
-    }
-
     #ghost-info {
         margin-bottom: $column-margin;
         padding-bottom: $column-margin;
