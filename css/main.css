@@ -84,6 +84,21 @@ button.tristate:active {
   margin-bottom: 10px;
 }
 
+#container #ghost-info {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#container #ghost-info #name {
+  margin-right: 10px;
+}
+
 @media (min-width: 700px) {
   #left {
     width: calc(35% - 10px);

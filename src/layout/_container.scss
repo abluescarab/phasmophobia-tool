@@ -9,4 +9,14 @@
         text-align: center;
         margin-bottom: $column-margin;
     }
+
+    #ghost-info {
+        margin-bottom: $column-margin;
+        display: flex;
+        flex-direction: row;
+
+        #name {
+            margin-right: $column-margin;
+        }
+    }
 }
