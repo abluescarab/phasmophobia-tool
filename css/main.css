@@ -9,7 +9,7 @@ body {
 
 * {
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 button:not(.tristate) {
@@ -22,6 +22,14 @@ label {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+a {
+  color: #336699;
+}
+
+a:visited {
+  color: #336699;
 }
 
 button.tristate {
@@ -52,19 +60,14 @@ button.tristate:active {
   margin-bottom: 10px;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 700px) {
   .column {
     float: left;
-    width: 50%;
-  }
-  .column:first-of-type {
-    width: calc(50% - 10px);
-    margin-right: 10px;
   }
 }
 
 #container {
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -90,6 +93,23 @@ button.tristate:active {
   grid-gap: 5px;
 }
 
+@media (min-width: 700px) {
+  #evidence {
+    width: calc(35% - 10px);
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 700px) {
+  div#ghosts {
+    width: 65%;
+  }
+}
+
+div#ghosts #show-evidence {
+  font-size: 0.8em;
+}
+
 div#ghosts ul {
   list-style-position: inside;
   list-style-type: none;
@@ -103,6 +123,20 @@ div#ghosts ul li::before {
   content: "\2022";
 }
 
-div#ghosts ul li span {
+div#ghosts ul li .ghost-type {
   margin-left: 10px;
+}
+
+div#ghosts ul li .evidence {
+  margin-left: 20px;
+  display: none;
+  font-size: 0.8em;
+}
+
+div#ghosts ul li .evidence span {
+  font-size: 1em;
+}
+
+div#ghosts ul li .evidence span:not(:last-child):after {
+  content: ", ";
 }

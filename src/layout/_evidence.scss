@@ -1,4 +1,9 @@
 #evidence {
+    @include desktop {
+        width: calc(35% - #{$column-margin});
+        margin-right: $column-margin;
+    }
+
     display: grid;
     grid-template-columns: max-content max-content;
     grid-gap: 5px;

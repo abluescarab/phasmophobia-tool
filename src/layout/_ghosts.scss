@@ -1,17 +1,39 @@
 div#ghosts {
+    @include desktop {
+        width: 65%;
+    }
+
+    #show-evidence {
+        font-size: $evidence-font-size;
+    }
+
     ul {
         list-style-position: inside;
         list-style-type: none;
 
         li {
-            margin-left: 10px;
+            margin-left: $list-margin;
 
             &::before {
                 content: "\2022";
             }
 
-            span {
-                margin-left: 10px;
+            .ghost-type {
+                margin-left: $list-margin;
+            }
+
+            .evidence {
+                margin-left: $list-margin * 2;
+                display: none;
+                font-size: $evidence-font-size;
+
+                span {
+                    &:not(:last-child):after {
+                        content: ", ";
+                    }
+
+                    font-size: 1em;
+                }
             }
         }
     }

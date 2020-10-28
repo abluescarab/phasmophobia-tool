@@ -6,7 +6,7 @@
     <title>Phasmophobia Tool</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
     <div id="container">
@@ -21,9 +21,6 @@
                 <button id="spirit-box" class="tristate" data-state="none"></button>
                 <label for="spirit-box">Spirit Box</label>
 
-                <button id="freezing-temperatures" class="tristate" data-state="none"></button>
-                <label for="freezing-temperatures">Freezing Temperatures</label>
-
                 <button id="fingerprints" class="tristate" data-state="none"></button>
                 <label for="fingerprints">Fingerprints</label>
 
@@ -32,30 +29,117 @@
 
                 <button id="ghost-writing" class="tristate" data-state="none"></button>
                 <label for="ghost-writing">Ghost Writing</label>
+
+                <button id="freezing-temperatures" class="tristate" data-state="none"></button>
+                <label for="freezing-temperatures">Freezing Temperatures</label>
             </div>
 
             <div class="column" id="ghosts">
-                <p>Possibilities:</p>
+                <p>Possibilities: <a href="#" data-state="no" id="show-evidence">show evidence</a></p>
                 <ul>
-                    <li id="spirit"><span>Spirit</span></li>
-                    <li id="wraith"><span>Wraith</span></li>
-                    <li id="phantom"><span>Phantom</span></li>
-                    <li id="poltergeist"><span>Poltergeist</span></li>
-                    <li id="banshee"><span>Banshee</span></li>
-                    <li id="jinn"><span>Jinn</span></li>
-                    <li id="mare"><span>Mare</span></li>
-                    <li id="revenant"><span>Revenant</span></li>
-                    <li id="shade"><span>Shade</span></li>
-                    <li id="demon"><span>Demon</span></li>
-                    <li id="yurei"><span>Yurei</span></li>
-                    <li id="oni"><span>Oni</span></li>
+                    <li id="spirit" class="ghost">
+                        <span class="ghost-type">Spirit</span>
+                        <p class="evidence">
+                            <span data-evidence="spirit-box">Spirit Box</span>
+                            <span data-evidence="fingerprints">Fingerprints</span>
+                            <span data-evidence="ghost-writing">Ghost Writing</span>
+                        </p>
+                    </li>
+                    <li id="wraith" class="ghost">
+                        <span class="ghost-type">Wraith</span>
+                        <p class="evidence">
+                            <span data-evidence="spirit-box">Spirit Box</span>
+                            <span data-evidence="fingerprints">Fingerprints</span>
+                            <span data-evidence="freezing-temperatures">Freezing Temperatures</span>
+                        </p>
+                    </li>
+                    <li id="phantom" class="ghost">
+                        <span class="ghost-type">Phantom</span>
+                        <p class="evidence">
+                            <span data-evidence="emf-level-5">EMF Level 5</span>
+                            <span data-evidence="ghost-orbs">Ghost Orbs</span>
+                            <span data-evidence="freezing-temperatures">Freezing Temperatures</span>
+                        </p>
+                    </li>
+                    <li id="poltergeist" class="ghost">
+                        <span class="ghost-type">Poltergeist</span>
+                        <p class="evidence">
+                            <span data-evidence="spirit-box">Spirit Box</span>
+                            <span data-evidence="fingerprints">Fingerprints</span>
+                            <span data-evidence="ghost-orbs">Ghost Orbs</span>
+                        </p>
+                    </li>
+                    <li id="banshee" class="ghost">
+                        <span class="ghost-type">Banshee</span>
+                        <p class="evidence">
+                            <span data-evidence="emf-level-5">EMF Level 5</span>
+                            <span data-evidence="fingers">Fingerprints</span>
+                            <span data-evidence="freezing-temperatures">Freezing Temperatures</span>
+                        </p>
+                    </li>
+                    <li id="jinn" class="ghost">
+                        <span class="ghost-type">Jinn</span>
+                        <p class="evidence">
+                            <span data-evidence="emf-level-5">EMF Level 5</span>
+                            <span data-evidence="spirit-box">Spirit Box</span>
+                            <span data-evidence="ghost-orbs">Ghost Orbs</span>
+                        </p>
+                    </li>
+                    <li id="mare" class="ghost">
+                        <span class="ghost-type">Mare</span>
+                        <p class="evidence">
+                            <span data-evidence="spirit-box">Spirit Box</span>
+                            <span data-evidence="ghost-orbs">Ghost Orbs</span>
+                            <span data-evidence="freezing-temperatures">Freezing Temperatures</span>
+                        </p>
+                    </li>
+                    <li id="revenant" class="ghost">
+                        <span class="ghost-type">Revenant</span>
+                        <p class="evidence">
+                            <span data-evidence="emf-level-5">EMF Level 5</span>
+                            <span data-evidence="fingers">Fingerprints</span>
+                            <span data-evidence="ghost-writing">Ghost Writing</span>
+                        </p>
+                    </li>
+                    <li id="shade" class="ghost">
+                        <span class="ghost-type">Shade</span>
+                        <p class="evidence">
+                            <span data-evidence="emf-level-5">EMF Level 5</span>
+                            <span data-evidence="ghost-orbs">Ghost Orbs</span>
+                            <span data-evidence="ghost-writing">Ghost Writing</span>
+                        </p>
+                    </li>
+                    <li id="demon" class="ghost">
+                        <span class="ghost-type">Demon</span>
+                        <p class="evidence">
+                            <span data-evidence="spirit-box">Spirit Box</span>
+                            <span data-evidence="ghost-writing">Ghost Writing</span>
+                            <span data-evidence="freezing-temperatures">Freezing Temperatures</span>
+                        </p>
+                    </li>
+                    <li id="yurei" class="ghost">
+                        <span class="ghost-type">Yurei</span>
+                        <p class="evidence">
+                            <span data-evidence="ghost-orbs">Ghost Orbs</span>
+                            <span data-evidence="ghost-writing">Ghost Writing</span>
+                            <span data-evidence="freezing-temperatures">Freezing Temperatures</span>
+                        </p>
+                    </li>
+                    <li id="oni" class="ghost">
+                        <span class="ghost-type">Oni</span>
+                        <p class="evidence">
+                            <span data-evidence="emf-level-5">EMF Level 5</span>
+                            <span data-evidence="spirit-box">Spirit Box</span>
+                            <span data-evidence="ghost-writing">Ghost Writing</span>
+                        </p>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="js/ghosts.js"></script>
     <script src="js/tristate.js"></script>
-    <script src="js/reset.js"></script>
+    <script src="js/events.js"></script>
 </body>
 </html>

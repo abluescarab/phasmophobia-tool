@@ -7,7 +7,7 @@ const evidence = Object.freeze({
     ghostWriting: "ghost-writing"
 });
 
-const ghosts = {
+const ghosts = Object.freeze({
     spirit: [evidence.ghostWriting, evidence.fingerprints, evidence.spiritBox],
     wraith: [evidence.fingerprints, evidence.spiritBox, evidence.freezingTemperatures],
     phantom: [evidence.emfLevel5, evidence.freezingTemperatures, evidence.ghostOrbs],
@@ -20,11 +20,11 @@ const ghosts = {
     demon: [evidence.ghostWriting, evidence.spiritBox, evidence.freezingTemperatures],
     yurei: [evidence.ghostWriting, evidence.freezingTemperatures, evidence.ghostOrbs],
     oni: [evidence.emfLevel5, evidence.ghostWriting, evidence.spiritBox]
-}
+});
 
 function checkGhosts() {
     var buttons = Array.prototype.slice.call(document.getElementsByClassName("tristate"));
-    var elements = document.getElementsByTagName("li");
+    var elements = document.getElementsByClassName("ghost");
 
     Array.prototype.forEach.call(elements, function(elem) {
         var included = buttons.filter(b => ghosts[elem.id].includes(b.id));
@@ -57,5 +57,13 @@ function checkGhosts() {
                 elem.style.display = "block";
             }
         }
+    });
+}
+
+function toggleEvidence(state) {
+    var elements = document.getElementsByClassName("evidence");
+
+    Array.prototype.forEach.call(elements, function(element) {
+        element.style.display = (state === states.yes ? "block" : "none");
     });
 }
