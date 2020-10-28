@@ -11,6 +11,8 @@ document.getElementById("reset").addEventListener("click", function(evt) {
     var buttons = document.getElementsByClassName("tristate");
     var checkboxes = document.querySelectorAll("input[type=checkbox]");
 
+    document.getElementById("ghost-name").value = "";
+
     document.getElementById("alone").checked = false;
     document.getElementById("everyone").checked = true;
 
