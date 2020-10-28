@@ -12,8 +12,14 @@
 
     #ghost-info {
         margin-bottom: $column-margin;
+        padding-bottom: $column-margin;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        border-bottom: 1px solid black;
+
+        @include desktop {
+            flex-direction: row;
+        }
 
         #name {
             margin-right: $column-margin;
