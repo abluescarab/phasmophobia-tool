@@ -1,12 +1,23 @@
 header {
     margin-bottom: $column-margin;
+    width: 100%;
 
     h1 {
-        float: left;
         line-height: $button-size;
     }
 
     button, a {
-        float: right;
+        float: left;
+        display: block;
+    }
+
+    @include desktop {
+        h1 {
+            float: left;
+        }
+
+        div {
+            float: right;
+        }
     }
 }

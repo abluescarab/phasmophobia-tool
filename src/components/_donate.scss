@@ -2,17 +2,33 @@
     background-color: #FBAA19;
     color: black;
     text-decoration: none;
-    min-width: calc(100px - #{$donate-padding-left + $donate-padding-right});
+    border: $donate-border-width-small solid black;
+
+    min-width: 100px - $donate-padding-left - $donate-padding-right - ($donate-border-width-small * 2);
+    margin-right: $column-margin;
     padding-left: $donate-padding-left;
     padding-right: $donate-padding-right;
-    border-radius: 2px;
 
     img, span {
         vertical-align: middle;
-        height: $button-size;
+        height: $button-size - ($donate-border-width-small * 2);
+    }
+
+    &:hover {
+        background-color: $donate-bg-hover;
+    }
+
+    &:active {
+        background-color: $donate-bg-active;
     }
 
     @include desktop {
-        margin-right: $donate-padding-right;
+        border-width: $donate-border-width-large;
+        border-radius: 3px;
+        min-width: 100px - $donate-padding-left - $donate-padding-right - ($donate-border-width-large * 2);
+
+        img, span {
+            height: $button-size - ($donate-border-width-large * 2);
+        }
     }
 }

@@ -41,20 +41,34 @@ input[type="checkbox"]:active {
   background-color: #FBAA19;
   color: black;
   text-decoration: none;
-  min-width: calc(100px - 15px);
+  border: 0.1px solid black;
+  min-width: 84.8px;
+  margin-right: 10px;
   padding-left: 5px;
   padding-right: 10px;
-  border-radius: 2px;
 }
 
 #donate img, #donate span {
   vertical-align: middle;
-  height: 30px;
+  height: 29.8px;
+}
+
+#donate:hover {
+  background-color: #f0a118;
+}
+
+#donate:active {
+  background-color: #ffb433;
 }
 
 @media (min-width: 700px) {
   #donate {
-    margin-right: 10px;
+    border-width: 1px;
+    border-radius: 3px;
+    min-width: 83px;
+  }
+  #donate img, #donate span {
+    height: 28px;
   }
 }
 
@@ -184,15 +198,25 @@ footer {
 
 header {
   margin-bottom: 10px;
+  width: 100%;
 }
 
 header h1 {
-  float: left;
   line-height: 30px;
 }
 
 header button, header a {
-  float: right;
+  float: left;
+  display: block;
+}
+
+@media (min-width: 700px) {
+  header h1 {
+    float: left;
+  }
+  header div {
+    float: right;
+  }
 }
 
 @media (min-width: 700px) {
