@@ -4,27 +4,15 @@
     display: flex;
     flex-direction: column;
 
-    #ghost-info {
-        margin-bottom: $margin;
-        padding-bottom: $margin;
-        display: flex;
-        flex-direction: column;
-        border-bottom: 1px solid black;
-
-        @include desktop {
-            flex-direction: row;
-        }
-
-        #name {
-            margin-right: $margin;
-        }
+    .right-margin {
+        margin-right: $margin;
     }
 
     .hidden {
         display: none;
     }
 
-    .header {
+    .section-title {
         margin-bottom: $grid-gap;
         font-weight: bold;
     }
@@ -35,5 +23,21 @@
         align-items: center;
         grid-gap: $grid-gap;
         margin-bottom: $grid-gap;
+    }
+
+    .reflow {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $margin;
+
+        @include desktop {
+            flex-direction: row;
+        }
+    }
+
+    & > div:first-of-type {
+        margin-bottom: $margin;
+        padding-bottom: $margin / 2;
+        border-bottom: 1px solid black;
     }
 }

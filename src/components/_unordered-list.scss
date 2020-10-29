@@ -10,20 +10,16 @@ ul {
             content: "\2022";
         }
 
-        .ghost-type {
+        span {
             margin-left: $list-margin;
             font-weight: bold;
         }
 
-        .ghost-evidence {
+        p {
             margin-top: $list-item-margin;
             margin-left: $list-margin * 2;
             font-size: $link-font-size;
             background-color: $light-blue;
-
-            span {
-                font-size: 1em;
-            }
         }
     }
 }

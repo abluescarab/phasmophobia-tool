@@ -1,19 +1,3 @@
-// document.getElementById("evidence-toggle").addEventListener("click", function(evt) {
-//     var newState = toggleState(evt.target, "evidence");
-//     toggleClasses("ghost-evidence", newState, "block");
-// });
-
-// Array.prototype.forEach.call(document.querySelectorAll("[id$=toggle]"), function(toggle) {
-//     toggle.addEventListener("click", function(evt) {
-//         alert("clicked")
-//     });
-// });
-
-// document.getElementById("used-equipment-toggle").addEventListener("click", function(evt) {
-//     var newState = toggleState(evt.target, "section");
-//     toggleId("used-equipment", newState, "block");
-// });
-
 Array.prototype.forEach.call(document.getElementsByClassName("toggle"), function(toggle) {
     toggle.addEventListener("click", function(evt) {
         var textContent = evt.target.textContent;

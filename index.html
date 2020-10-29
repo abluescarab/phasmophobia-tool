@@ -23,31 +23,48 @@
         <header>
             <h1>Phasmophobia Tool</h1>
 
-            <div id="top-buttons">
+            <div>
                 <a href="https://ko-fi.com/W7W2V072" target="_blank" id="donate"><img src="img/Ko-fi_logo_RGB_Outline.png" alt="Buy Me a Coffee at ko-fi.com" /><span>Donate</span></a>
                 <button id="reset">Reset</button>
             </div>
         </header>
 
-        <div id="ghost-info">
-            <div id="name">
-                <label for="ghost-name">Name:</label>
-                <input type="text" id="ghost-name"/>
+        <div>
+            <div class="reflow">
+                <div class="right-margin">
+                    <label for="ghost-name">Name:</label>
+                    <input type="text" id="ghost-name"/>
+                </div>
+
+                <form>
+                    <input type="radio" name="ghost-group" id="everyone" checked>
+                    <label for="everyone">Everyone</label>
+
+                    <input type="radio" name="ghost-group" id="alone">
+                    <label for="alone">Alone</label>
+                </form>
             </div>
 
-            <form id="alone-everyone">
-                <input type="radio" name="ghost-group" id="everyone" checked>
-                <label for="everyone">Everyone</label>
+            <div class="reflow">
+                <div class="right-margin">
+                    <label>Difficulty:</label>
+                    <select id="difficulty-select">
+                        <option value="amateur">Amateur</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="professional">Professional</option>
+                    </select>
+                </div>
 
-                <input type="radio" name="ghost-group" id="alone">
-                <label for="alone">Alone</label>
-            </form>
+                <div>
+                    <p>Reward: $<span id="reward">0</span></p>
+                </div>
+            </div>
         </div>
 
-        <div id="columns">
+        <div>
             <div class="column" id="left">
-                <section id="evidence-buttons">
-                    <p class="header">Evidence</p>
+                <section>
+                    <p class="section-title">Evidence</p>
                     <div class="grid">
                         <button id="emf-level-5" class="tristate" data-state="none"></button>
                         <label for="emf-level-5">EMF Level 5</label>
@@ -80,7 +97,7 @@
                 </section>
 
                 <section id="objective-buttons">
-                    <p class="header">Objectives <a href="#" data-state="no" data-toggle-id="objectives" class="toggle">show section</a></p>
+                    <p class="section-title">Objectives <a href="#" data-state="no" data-toggle-id="objectives" class="toggle">show section</a></p>
                     <div id="objectives" class="hidden">
                         <div class="grid">
                             <input type="checkbox" id="objective-1"/>
@@ -133,8 +150,8 @@
                     </div>
                 </section>
 
-                <section id="equipment-buttons">
-                    <p class="header">Used Equipment <a href="#" data-state="no" data-toggle-id="used-equipment" class="toggle">show section</a></p>
+                <section>
+                    <p class="section-title">Used Equipment <a href="#" data-state="no" data-toggle-id="used-equipment" class="toggle">show section</a></p>
                     <div id="used-equipment" class="hidden">
                         <div class="grid">
                             <input type="checkbox" id="equipment-emf-reader"/>
