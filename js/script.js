@@ -64,7 +64,6 @@ function toggleClasses(elementClass, state, shownDisplayValue) {
     var elements = document.getElementsByClassName(elementClass);
 
     Array.prototype.forEach.call(elements, function(element) {
-        console.log(element);
         element.style.display = (state === states.yes ? shownDisplayValue : "none");
     });
 }

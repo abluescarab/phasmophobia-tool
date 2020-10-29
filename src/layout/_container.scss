@@ -19,4 +19,21 @@
             margin-right: $column-margin;
         }
     }
+
+    .hidden {
+        display: none;
+    }
+
+    .header {
+        margin-bottom: $grid-gap;
+        font-weight: bold;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: max-content minmax(0, 1fr);
+        align-items: center;
+        grid-gap: $grid-gap;
+        margin-bottom: $grid-gap;
+    }
 }

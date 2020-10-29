@@ -1,27 +1,11 @@
 #left {
     @include desktop {
-        width: calc(35% - #{$column-margin});
+        width: calc(45% - #{$column-margin});
         margin-right: $column-margin;
     }
 
-    .header {
-        margin-bottom: $grid-gap;
-        font-weight: bold;
-    }
-
-    div {
+    & > div {
         display: flex;
         flex-direction: column;
-
-        #equipment-checkboxes {
-            display: none;
-        }
-
-        .evidence-button, .equipment-checkbox {
-            display: grid;
-            grid-template-columns: max-content max-content;
-            grid-gap: $grid-gap;
-            margin-bottom: $grid-gap;
-        }
     }
 }

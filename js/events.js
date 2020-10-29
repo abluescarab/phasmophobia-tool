@@ -1,11 +1,32 @@
-document.getElementById("evidence-toggle").addEventListener("click", function(evt) {
-    var newState = toggleState(evt.target, "evidence");
-    toggleClasses("ghost-evidence", newState, "block");
-});
+// document.getElementById("evidence-toggle").addEventListener("click", function(evt) {
+//     var newState = toggleState(evt.target, "evidence");
+//     toggleClasses("ghost-evidence", newState, "block");
+// });
 
-document.getElementById("used-equipment-toggle").addEventListener("click", function(evt) {
-    var newState = toggleState(evt.target, "section");
-    toggleId("equipment-checkboxes", newState, "block");
+// Array.prototype.forEach.call(document.querySelectorAll("[id$=toggle]"), function(toggle) {
+//     toggle.addEventListener("click", function(evt) {
+//         alert("clicked")
+//     });
+// });
+
+// document.getElementById("used-equipment-toggle").addEventListener("click", function(evt) {
+//     var newState = toggleState(evt.target, "section");
+//     toggleId("used-equipment", newState, "block");
+// });
+
+Array.prototype.forEach.call(document.getElementsByClassName("toggle"), function(toggle) {
+    toggle.addEventListener("click", function(evt) {
+        var textContent = evt.target.textContent;
+        var substring = textContent.substr(textContent.indexOf(" ") + 1);
+        var newState = toggleState(evt.target, substring);
+
+        if(typeof evt.target.dataset.toggleId !== "undefined") {
+            toggleId(evt.target.dataset.toggleId, newState, "block");
+        }
+        else if(typeof evt.target.dataset.toggleClass !== "undefined") {
+            toggleClasses(evt.target.dataset.toggleClass, newState, "block");
+        }
+    });
 });
 
 document.getElementById("reset").addEventListener("click", function(evt) {

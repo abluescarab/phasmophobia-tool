@@ -39,7 +39,7 @@ input[type="checkbox"]:active {
   background-color: #fefefe;
 }
 
-#donate {
+a#donate {
   background-color: #FBAA19;
   color: black;
   text-decoration: none;
@@ -50,26 +50,26 @@ input[type="checkbox"]:active {
   padding-right: 10px;
 }
 
-#donate img, #donate span {
+a#donate img, a#donate span {
   vertical-align: middle;
   height: 29.8px;
 }
 
-#donate:hover {
+a#donate:hover {
   background-color: #f0a118;
 }
 
-#donate:active {
+a#donate:active {
   background-color: #ffb433;
 }
 
 @media (min-width: 700px) {
-  #donate {
+  a#donate {
     border-width: 1px;
     border-radius: 3px;
     min-width: 83px;
   }
-  #donate img, #donate span {
+  a#donate img, a#donate span {
     height: 28px;
   }
 }
@@ -136,7 +136,6 @@ ul li .ghost-type {
 ul li .ghost-evidence {
   margin-top: 3px;
   margin-left: 20px;
-  display: none;
   font-size: 0.9em;
   background-color: #EBFFFF;
 }
@@ -194,8 +193,26 @@ ul li .ghost-evidence span {
   margin-right: 10px;
 }
 
-footer {
-  text-align: right;
+#container .hidden {
+  display: none;
+}
+
+#container .header {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#container .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: max-content minmax(0, 1fr);
+      grid-template-columns: -webkit-max-content minmax(0, 1fr);
+      grid-template-columns: max-content minmax(0, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 5px;
+  margin-bottom: 5px;
 }
 
 header {
@@ -223,17 +240,12 @@ header button, header a {
 
 @media (min-width: 700px) {
   #left {
-    width: calc(35% - 10px);
+    width: calc(45% - 10px);
     margin-right: 10px;
   }
 }
 
-#left .header {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-#left div {
+#left > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -243,22 +255,8 @@ header button, header a {
           flex-direction: column;
 }
 
-#left div #equipment-checkboxes {
-  display: none;
-}
-
-#left div .evidence-button, #left div .equipment-checkbox {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: max-content max-content;
-      grid-template-columns: -webkit-max-content -webkit-max-content;
-      grid-template-columns: max-content max-content;
-  grid-gap: 5px;
-  margin-bottom: 5px;
-}
-
 @media (min-width: 700px) {
   #right {
-    width: 65%;
+    width: 55%;
   }
 }
