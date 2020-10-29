@@ -15,6 +15,7 @@ body {
 button:not(.tristate) {
   height: 30px;
   min-width: 100px;
+  cursor: pointer;
 }
 
 input[type="checkbox"] {
@@ -34,6 +35,27 @@ input[type="checkbox"] {
 input[type="checkbox"]:active {
   border: 1px solid #aaa;
   background-color: #fefefe;
+}
+
+#donate {
+  background-color: #FBAA19;
+  color: black;
+  text-decoration: none;
+  min-width: calc(100px - 15px);
+  padding-left: 5px;
+  padding-right: 10px;
+  border-radius: 2px;
+}
+
+#donate img, #donate span {
+  vertical-align: middle;
+  height: 30px;
+}
+
+@media (min-width: 700px) {
+  #donate {
+    margin-right: 10px;
+  }
 }
 
 label {
@@ -169,7 +191,7 @@ header h1 {
   line-height: 30px;
 }
 
-header button {
+header button, header a {
   float: right;
 }
 

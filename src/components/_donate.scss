@@ -1,0 +1,18 @@
+#donate {
+    background-color: #FBAA19;
+    color: black;
+    text-decoration: none;
+    min-width: calc(100px - #{$donate-padding-left + $donate-padding-right});
+    padding-left: $donate-padding-left;
+    padding-right: $donate-padding-right;
+    border-radius: 2px;
+
+    img, span {
+        vertical-align: middle;
+        height: $button-size;
+    }
+
+    @include desktop {
+        margin-right: $donate-padding-right;
+    }
+}
