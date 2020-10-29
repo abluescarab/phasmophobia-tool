@@ -5,8 +5,8 @@
     flex-direction: column;
 
     #ghost-info {
-        margin-bottom: $column-margin;
-        padding-bottom: $column-margin;
+        margin-bottom: $margin;
+        padding-bottom: $margin;
         display: flex;
         flex-direction: column;
         border-bottom: 1px solid black;
@@ -16,7 +16,7 @@
         }
 
         #name {
-            margin-right: $column-margin;
+            margin-right: $margin;
         }
     }
 

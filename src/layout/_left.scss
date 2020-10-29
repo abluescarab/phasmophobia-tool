@@ -1,7 +1,7 @@
 #left {
     @include desktop {
-        width: calc(45% - #{$column-margin});
-        margin-right: $column-margin;
+        width: calc(45% - #{$margin});
+        margin-right: $margin;
     }
 
     & > div {

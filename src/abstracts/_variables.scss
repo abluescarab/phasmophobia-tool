@@ -7,7 +7,7 @@ $tristate-font-size: $tristate-size - 1px;
 $button-size: 30px;
 
 $container-size: 700px;
-$column-margin: 10px;
+$margin: 10px;
 $grid-gap: 5px;
 
 $link-font-size: .9em;
@@ -15,8 +15,8 @@ $link-font-size: .9em;
 $list-margin: 10px;
 $list-item-margin: 3px;
 
-$donate-padding-left: $column-margin / 2;
-$donate-padding-right: $column-margin;
+$donate-padding-left: $margin / 2;
+$donate-padding-right: $margin;
 $donate-bg: #FBAA19;
 $donate-bg-hover: #f0a118;
 $donate-bg-active: #ffb433;

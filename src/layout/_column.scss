@@ -1,6 +1,6 @@
 .column {
     width: 100%;
-    margin-bottom: $column-margin;
+    margin-bottom: $margin;
 
     @include desktop {
         float: left;
