@@ -91,6 +91,10 @@ a:visited {
   color: #336699;
 }
 
+section {
+  margin-bottom: 10px;
+}
+
 button.tristate {
   -webkit-user-select: none;
      -moz-user-select: none;
