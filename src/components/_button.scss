@@ -1,4 +1,5 @@
 button:not(.tristate) {
     height: $button-size;
     min-width: 100px;
+    cursor: pointer;
 }
