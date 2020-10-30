@@ -44,6 +44,7 @@ for(var toggle of document.getElementsByClassName("toggle")) {
 
 for(var checkbox of document.querySelectorAll("input[type=checkbox]")) {
     checkbox.addEventListener("click", function(evt) {
+        var checkedEvidence = false;
         var parent = evt.target.parentElement.parentElement;
 
         if(parent.id === "objectives") {
@@ -53,13 +54,16 @@ for(var checkbox of document.querySelectorAll("input[type=checkbox]")) {
             if(select.tagName === "SELECT") {
                 var photoEvidence = document.getElementById(select.value);
 
-                if(photoEvidence !== null && evt.target.checked) {
+                if(photoEvidence !== null &&
+                    evt.target.checked &&
+                    !photoEvidence.checked) {
                     photoEvidence.checked = true;
+                    checkedEvidence = true;
                 }
             }
         }
 
-        calculateReward(evt.target);
+        calculateReward(evt.target, checkedEvidence);
     });
 }
 

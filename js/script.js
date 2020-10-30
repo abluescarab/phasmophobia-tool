@@ -87,7 +87,7 @@ function toggleId(elementId, state, shownDisplayValue) {
     element.style.display = (state === states.yes ? shownDisplayValue : "none");
 }
 
-function calculateReward(element) {
+function calculateReward(element, addExtra = false) {
     var difficulty = document.getElementById("difficulty");
     var rewardSpan = document.getElementById("reward");
     var reward = parseInt(rewardSpan.dataset.baseValue);
@@ -95,6 +95,11 @@ function calculateReward(element) {
 
     if(element !== difficulty) {
         reward += (element.checked ? 10 : -10);
+
+        if(addExtra) {
+            reward += 10;
+        }
+
         reward = Math.max(0, reward);
         rewardSpan.dataset.baseValue = reward;
     }
