@@ -9,6 +9,7 @@ document.getElementById("reset").addEventListener("click", function(evt) {
 
     document.getElementById("ghost-name").value = "";
     document.getElementById("reward").textContent = 0;
+    document.getElementById("reward").dataset.baseValue = 0;
     document.getElementById("alone").checked = false;
     document.getElementById("everyone").checked = true;
 
@@ -23,7 +24,6 @@ document.getElementById("reset").addEventListener("click", function(evt) {
     for(var select of options) {
         select.selectedIndex = 0;
     }
-
     checkObjectiveOptions(true);
 });
 
