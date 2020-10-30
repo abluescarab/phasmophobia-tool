@@ -13,20 +13,16 @@
     }
 
     .section-title {
-        margin-bottom: $margin / 2;
         font-weight: bold;
+
+        & + div {
+            margin-top: $margin / 2;
+        }
     }
 
-    .flex-item {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-bottom: $margin / 2;
-        align-items: center;
-
-        :first-child {
-            margin-right: $margin / 2;
-        }
+    .vertical-grid {
+        display: grid;
+        grid-template-rows: max-content max-content;
     }
 
     .reflow {

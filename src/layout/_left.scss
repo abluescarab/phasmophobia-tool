@@ -1,11 +1,28 @@
 #left {
     @include desktop {
         width: calc(45% - #{$margin});
-        margin-right: $margin;
+        margin-right: $margin / 2;
     }
 
     & > div {
         display: flex;
         flex-direction: column;
+    }
+
+    .flex-item {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 1;
+        margin-top: $margin / 2;
+        align-items: center;
+
+        :first-child {
+            margin-right: $margin / 2;
+        }
+
+        select {
+            width: calc(100% - (#{$tristate-size} + #{$margin / 2}));
+        }
     }
 }

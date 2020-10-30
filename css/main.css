@@ -99,7 +99,10 @@ a:visited {
 }
 
 section {
-  margin-bottom: 10px;
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #FFFFF0;
+  border: 1px solid black;
 }
 
 button.tristate {
@@ -141,7 +144,6 @@ ul li::before {
 
 ul li span {
   margin-left: 10px;
-  font-weight: bold;
 }
 
 .column {
@@ -176,28 +178,19 @@ ul li span {
 }
 
 #container .section-title {
-  margin-bottom: 5px;
   font-weight: bold;
 }
 
-#container .flex-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-bottom: 5px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+#container .section-title + div {
+  margin-top: 5px;
 }
 
-#container .flex-item :first-child {
-  margin-right: 5px;
+#container .vertical-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: max-content max-content;
+      grid-template-rows: -webkit-max-content -webkit-max-content;
+      grid-template-rows: max-content max-content;
 }
 
 #container .reflow {
@@ -252,7 +245,7 @@ header button, header a {
 @media (min-width: 700px) {
   #left {
     width: calc(45% - 10px);
-    margin-right: 10px;
+    margin-right: 5px;
   }
 }
 
@@ -264,6 +257,33 @@ header button, header a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+#left .flex-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-top: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#left .flex-item :first-child {
+  margin-right: 5px;
+}
+
+#left .flex-item select {
+  width: calc(100% - (20px + 5px));
 }
 
 @media (min-width: 700px) {
