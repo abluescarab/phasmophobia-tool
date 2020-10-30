@@ -44,6 +44,18 @@
                     <label for="alone">Alone</label>
                 </form>
             </div>
+
+            <div class="reflow">
+                <div class="right-margin">
+                    <label>Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="1">Amateur</option>
+                        <option value="2">Intermediate</option>
+                        <option value="3">Professional</option>
+                    </select>
+                </div>
+                <p>Reward: $<span id="reward" data-base-value="0">0</span></p>
+            </div>
         </div>
 
         <div>
@@ -138,8 +150,6 @@
             </div>
 
             <div class="column" id="right">
-
-
                 <section>
                     <p class="section-title">Objectives <a href="#" data-state="no" data-toggle-id="objectives" class="toggle">show section</a></p>
                     <div id="objectives" class="hidden">
@@ -155,46 +165,46 @@
 
                         <div class="flex-item">
                             <input type="checkbox"/>
-                            <select>
+                            <select id="objective-1">
                                 <option>None</option>
-                                <option>Detect activity with EMF</option>
-                                <option>Detect below 10&deg;C/50&deg;F</option>
-                                <option value="photo-dirty-water">Photograph dirty water</option>
-                                <option value="photo-ghost">Photograph ghost</option>
-                                <option>Detect ghost with motion sensor</option>
-                                <option>Prevent ghost hunt with crucifix</option>
-                                <option>Witness ghost event</option>
-                                <option>Cleanse using smudge sticks</option>
+                                <option id="emf">Detect activity with EMF</option>
+                                <option id="temperature">Detect below 10&deg;C/50&deg;F</option>
+                                <option id="dirty-water" value="photo-dirty-water">Photograph dirty water</option>
+                                <option id="ghost" value="photo-ghost">Photograph ghost</option>
+                                <option id="motion">Detect ghost with motion sensor</option>
+                                <option id="crucifix">Prevent ghost hunt with crucifix</option>
+                                <option id="witness">Witness ghost event</option>
+                                <option id="smudge">Cleanse using smudge sticks</option>
                             </select>
                         </div>
 
                         <div class="flex-item">
                             <input type="checkbox"/>
-                            <select>
+                            <select id="objective-2">
                                 <option>None</option>
-                                <option>Detect activity with EMF</option>
-                                <option>Detect below 10&deg;C/50&deg;F</option>
-                                <option value="photo-dirty-water">Photograph dirty water</option>
-                                <option value="photo-ghost">Photograph ghost</option>
-                                <option>Detect ghost with motion sensor</option>
-                                <option>Prevent ghost hunt with crucifix</option>
-                                <option>Witness Ghost event</option>
-                                <option>Cleanse using Smudge Sticks</option>
+                                <option id="emf">Detect activity with EMF</option>
+                                <option id="temperature">Detect below 10&deg;C/50&deg;F</option>
+                                <option id="dirty-water" value="photo-dirty-water">Photograph dirty water</option>
+                                <option id="ghost" value="photo-ghost">Photograph ghost</option>
+                                <option id="motion">Detect ghost with motion sensor</option>
+                                <option id="crucifix">Prevent ghost hunt with crucifix</option>
+                                <option id="witness">Witness ghost event</option>
+                                <option id="smudge">Cleanse using smudge sticks</option>
                             </select>
                         </div>
 
                         <div class="flex-item">
                             <input type="checkbox"/>
-                            <select>
+                            <select id="objective-3">
                                 <option>None</option>
-                                <option>Detect activity with EMF</option>
-                                <option>Detect below 10&deg;C/50&deg;F</option>
-                                <option value="photo-dirty-water">Photograph dirty water</option>
-                                <option value="photo-ghost">Photograph ghost</option>
-                                <option>Detect ghost with motion sensor</option>
-                                <option>Prevent ghost hunt with crucifix</option>
-                                <option>Witness Ghost event</option>
-                                <option>Cleanse using Smudge Sticks</option>
+                                <option id="emf">Detect activity with EMF</option>
+                                <option id="temperature">Detect below 10&deg;C/50&deg;F</option>
+                                <option id="dirty-water" value="photo-dirty-water">Photograph dirty water</option>
+                                <option id="ghost" value="photo-ghost">Photograph ghost</option>
+                                <option id="motion">Detect ghost with motion sensor</option>
+                                <option id="crucifix">Prevent ghost hunt with crucifix</option>
+                                <option id="witness">Witness ghost event</option>
+                                <option id="smudge">Cleanse using smudge sticks</option>
                             </select>
                         </div>
                     </div>

@@ -1,4 +1,33 @@
-Array.prototype.forEach.call(document.getElementsByClassName("toggle"), function(toggle) {
+document.getElementById("difficulty").addEventListener("change", function(evt) {
+    calculateReward(evt.target);
+});
+
+document.getElementById("reset").addEventListener("click", function(evt) {
+    var buttons = document.getElementsByClassName("tristate");
+    var checkboxes = document.querySelectorAll("input[type=checkbox]");
+    var options = document.getElementsByTagName("select");
+
+    document.getElementById("ghost-name").value = "";
+    document.getElementById("reward").textContent = 0;
+    document.getElementById("alone").checked = false;
+    document.getElementById("everyone").checked = true;
+
+    for(var button of buttons) {
+        setState(button, states.empty);
+    }
+
+    for(var checkbox of checkboxes) {
+        checkbox.checked = false;
+    }
+
+    for(var select of options) {
+        select.selectedIndex = 0;
+    }
+
+    checkObjectiveOptions(true);
+});
+
+for(var toggle of document.getElementsByClassName("toggle")) {
     toggle.addEventListener("click", function(evt) {
         var textContent = evt.target.textContent;
         var substring = textContent.substr(textContent.indexOf(" ") + 1);
@@ -11,58 +40,32 @@ Array.prototype.forEach.call(document.getElementsByClassName("toggle"), function
             toggleClasses(evt.target.dataset.toggleClass, newState, "block");
         }
     });
-});
+}
 
-Array.prototype.forEach.call(document.querySelectorAll("#objectives input[type=checkbox]"), function(checkbox) {
+for(var checkbox of document.querySelectorAll("input[type=checkbox]")) {
     checkbox.addEventListener("click", function(evt) {
-        var select = checkbox.nextSibling;
+        var parent = evt.target.parentElement.parentElement;
 
-        while(select && select.nodeType !== 1) {
-            select = select.nextSibling;
-        }
+        if(parent.id === "objectives") {
+            console.log("checked");
+            var select = getSibling(evt.target);
 
-        if(select.tagName === "SELECT") {
-            var photoEvidence = document.getElementById(select.value);
+            if(select.tagName === "SELECT") {
+                var photoEvidence = document.getElementById(select.value);
 
-            if(photoEvidence !== null && checkbox.checked) {
-                photoEvidence.checked = true;
+                if(photoEvidence !== null && evt.target.checked) {
+                    photoEvidence.checked = true;
+                }
             }
         }
+
+        calculateReward(evt.target);
     });
-});
+}
 
-document.getElementById("reset").addEventListener("click", function(evt) {
-    var buttons = document.getElementsByClassName("tristate");
-    var checkboxes = document.querySelectorAll("input[type=checkbox]");
-    var selects = document.getElementsByTagName("select");
-
-    document.getElementById("ghost-name").value = "";
-    document.getElementById("alone").checked = false;
-    document.getElementById("everyone").checked = true;
-
-    Array.prototype.forEach.call(buttons, function(b) {
-        setState(b, states.empty);
+for(var select of document.querySelectorAll("#objectives select")) {
+    select.addEventListener("change", function(evt) {
+        getSibling(evt.target, false).checked = false;
+        checkObjectiveOptions();
     });
-
-    Array.prototype.forEach.call(checkboxes, function(c) {
-        c.checked = false;
-    });
-
-    Array.prototype.forEach.call(selects, function(s) {
-        s.selectedIndex = 0;
-    });
-});
-
-function toggleState(element, textAppend) {
-    var newState = (element.dataset.state === states.yes.data ?
-        states.no : states.yes);
-    var firstWord = element.textContent.substr(0, element.textContent.indexOf(" "));
-
-    element.dataset.state = newState.data;
-
-    if(firstWord === "show" || firstWord === "hide") {
-        element.textContent = (newState.data === states.yes.data ? "hide" : "show") + " " + textAppend;
-    }
-
-    return newState;
 }

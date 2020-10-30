@@ -60,6 +60,20 @@ function checkGhosts() {
     });
 }
 
+function toggleState(element, textAppend) {
+    var newState = (element.dataset.state === states.yes.data ?
+        states.no : states.yes);
+    var firstWord = element.textContent.substr(0, element.textContent.indexOf(" "));
+
+    element.dataset.state = newState.data;
+
+    if(firstWord === "show" || firstWord === "hide") {
+        element.textContent = (newState.data === states.yes.data ? "hide" : "show") + " " + textAppend;
+    }
+
+    return newState;
+}
+
 function toggleClasses(elementClass, state, shownDisplayValue) {
     var elements = document.getElementsByClassName(elementClass);
 
@@ -71,4 +85,46 @@ function toggleClasses(elementClass, state, shownDisplayValue) {
 function toggleId(elementId, state, shownDisplayValue) {
     var element = document.getElementById(elementId);
     element.style.display = (state === states.yes ? shownDisplayValue : "none");
+}
+
+function calculateReward(element) {
+    var difficulty = document.getElementById("difficulty");
+    var rewardSpan = document.getElementById("reward");
+    var reward = parseInt(rewardSpan.dataset.baseValue);
+    var multiplier = parseInt(difficulty.value);
+
+    if(element !== difficulty) {
+        reward += (element.checked ? 10 : -10);
+        reward = Math.max(0, reward);
+        rewardSpan.dataset.baseValue = reward;
+    }
+
+    rewardSpan.textContent = reward * multiplier;
+}
+
+function getSibling(element, next = true) {
+    var sibling = (next ? element.nextSibling : element.previousSibling);
+
+    while(sibling && sibling.nodeType !== 1) {
+        sibling = (next ? sibling.nextSibling : sibling.previousSibling);
+    }
+
+    return sibling;
+}
+
+function checkObjectiveOptions(reset = false) {
+    var options = document.querySelectorAll("[id^=objective-] option[id]");
+    var selectedOptions = [].slice.call(document.querySelectorAll("[id^=objective-] option[id]:checked"));
+    var selectedOptionNames = selectedOptions.map(o => o.id);
+
+    for(var option of options) {
+        if(!reset &&
+            selectedOptionNames.includes(option.id) &&
+            !selectedOptions.includes(option)) {
+            option.style.display = "none";
+        }
+        else {
+            option.style.display = "block";
+        }
+    }
 }
