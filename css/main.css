@@ -74,6 +74,13 @@ a#donate:active {
   }
 }
 
+.extra-info {
+  margin-top: 3px;
+  margin-left: 20px;
+  font-size: 0.9em;
+  background-color: #EBFFFF;
+}
+
 label {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -137,13 +144,6 @@ ul li span {
   font-weight: bold;
 }
 
-ul li p {
-  margin-top: 3px;
-  margin-left: 20px;
-  font-size: 0.9em;
-  background-color: #EBFFFF;
-}
-
 .column {
   width: 100%;
   margin-bottom: 10px;
@@ -180,17 +180,24 @@ ul li p {
   font-weight: bold;
 }
 
-#container .grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: max-content minmax(0, 1fr);
-      grid-template-columns: -webkit-max-content minmax(0, 1fr);
-      grid-template-columns: max-content minmax(0, 1fr);
+#container .flex-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 5px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  grid-gap: 5px;
-  margin-bottom: 5px;
+}
+
+#container .flex-item :first-child {
+  margin-right: 5px;
 }
 
 #container .reflow {

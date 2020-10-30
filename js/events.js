@@ -33,7 +33,13 @@ document.getElementById("reset").addEventListener("click", function(evt) {
 function toggleState(element, textAppend) {
     var newState = (element.dataset.state === states.yes.data ?
         states.no : states.yes);
+    var firstWord = element.textContent.substr(0, element.textContent.indexOf(" "));
+
     element.dataset.state = newState.data;
-    element.textContent = (newState.data === states.yes.data ? "hide" : "show") + " " + textAppend;
+
+    if(firstWord === "show" || firstWord === "hide") {
+        element.textContent = (newState.data === states.yes.data ? "hide" : "show") + " " + textAppend;
+    }
+
     return newState;
 }
