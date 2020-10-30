@@ -13,9 +13,28 @@ Array.prototype.forEach.call(document.getElementsByClassName("toggle"), function
     });
 });
 
+Array.prototype.forEach.call(document.querySelectorAll("#objectives input[type=checkbox]"), function(checkbox) {
+    checkbox.addEventListener("click", function(evt) {
+        var select = checkbox.nextSibling;
+
+        while(select && select.nodeType !== 1) {
+            select = select.nextSibling;
+        }
+
+        if(select.tagName === "SELECT") {
+            var photoEvidence = document.getElementById(select.value);
+
+            if(photoEvidence !== null && checkbox.checked) {
+                photoEvidence.checked = true;
+            }
+        }
+    });
+});
+
 document.getElementById("reset").addEventListener("click", function(evt) {
     var buttons = document.getElementsByClassName("tristate");
     var checkboxes = document.querySelectorAll("input[type=checkbox]");
+    var selects = document.getElementsByTagName("select");
 
     document.getElementById("ghost-name").value = "";
     document.getElementById("alone").checked = false;
@@ -27,6 +46,10 @@ document.getElementById("reset").addEventListener("click", function(evt) {
 
     Array.prototype.forEach.call(checkboxes, function(c) {
         c.checked = false;
+    });
+
+    Array.prototype.forEach.call(selects, function(s) {
+        s.selectedIndex = 0;
     });
 });
 
