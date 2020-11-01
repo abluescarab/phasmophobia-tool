@@ -9,33 +9,32 @@ const states = Object.freeze({
         text: "\u2715",
         color: "red"
     },
-    empty: {
+    none: {
         data: "none",
         text: "",
         color: "black"
     }
 });
 
-Array.prototype.forEach.call(document.getElementsByClassName("tristate"),
+Array.prototype.forEach.call(document.getElementsByClassName("multistate"),
 function(elem) {
     elem.addEventListener("click", nextState, false);
 });
 
 function nextState(evt) {
-    element = evt.target;
+    var element = evt.target;
+    var allStates = [states.yes.data, states.no.data, states.none.data];
 
-    switch(element.dataset.state) {
-        case states.empty.data:
-            setState(element, states.yes);
-            break;
-        case states.yes.data:
-            setState(element, states.no);
-            break;
-        case states.no.data:
-        default:
-            setState(element, states.empty);
-            break;
+    if(typeof(element.dataset.states) !== "undefined") {
+        allStates = element.dataset.states.split(" ");
     }
+
+    var nextIndex = allStates.indexOf(element.dataset.state) + 1;
+
+    if(nextIndex >= allStates.length)
+        nextIndex = 0;
+
+    setState(element, states[allStates[nextIndex]]);
 }
 
 function setState(element, state) {

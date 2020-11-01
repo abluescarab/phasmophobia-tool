@@ -3,7 +3,7 @@ document.getElementById("difficulty").addEventListener("change", function(evt) {
 });
 
 document.getElementById("reset").addEventListener("click", function(evt) {
-    var buttons = document.getElementsByClassName("tristate");
+    var buttons = document.getElementsByClassName("multistate");
     var checkboxes = document.querySelectorAll("input[type=checkbox]");
     var options = document.getElementsByTagName("select");
 
@@ -14,7 +14,7 @@ document.getElementById("reset").addEventListener("click", function(evt) {
     document.getElementById("everyone").checked = true;
 
     for(var button of buttons) {
-        setState(button, states.empty);
+        setState(button, states.none);
     }
 
     for(var checkbox of checkboxes) {

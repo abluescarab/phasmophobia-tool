@@ -16,7 +16,7 @@
         }
 
         select {
-            width: calc(100% - (#{$tristate-size} + #{$margin / 2}));
+            width: calc(100% - (#{$multistate-size} + #{$margin / 2}));
         }
     }
 

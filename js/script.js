@@ -23,7 +23,7 @@ const ghosts = Object.freeze({
 });
 
 function checkGhosts() {
-    var buttons = Array.prototype.slice.call(document.getElementsByClassName("tristate"));
+    var buttons = Array.prototype.slice.call(document.getElementsByClassName("multistate"));
     var elements = document.getElementsByClassName("ghost");
 
     Array.prototype.forEach.call(elements, function(elem) {

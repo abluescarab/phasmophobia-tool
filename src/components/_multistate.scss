@@ -1,7 +1,7 @@
-button.tristate {
+button.multistate {
     user-select: none;
-    width: $tristate-size;
-    height: $tristate-size;
+    width: $multistate-size;
+    height: $multistate-size;
     padding: 0;
 
     background-color: #f9f9f9;
@@ -9,8 +9,8 @@ button.tristate {
     border-radius: 3px;
     outline: none;
 
-    line-height: $tristate-size;
-    font-size: $tristate-font-size;
+    line-height: $multistate-size;
+    font-size: $multistate-font-size;
     font-weight: bold;
     text-align: center;
 

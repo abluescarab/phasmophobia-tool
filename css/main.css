@@ -14,7 +14,7 @@ body {
   font-size: 17px;
 }
 
-button:not(.tristate) {
+button:not(.multistate) {
   height: 30px;
   min-width: 100px;
   cursor: pointer;
@@ -105,7 +105,7 @@ section {
   border: 1px solid black;
 }
 
-button.tristate {
+button.multistate {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -123,7 +123,7 @@ button.tristate {
   text-align: center;
 }
 
-button.tristate:active {
+button.multistate:active {
   border: 1px solid #aaa;
   background-color: #fefefe;
 }
