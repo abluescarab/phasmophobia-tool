@@ -136,9 +136,9 @@ function checkObjectiveOptions(reset = false) {
 
 function convertTemperature(element) {
     if(element.id === "celsius") {
-        document.getElementById("fahrenheit").value = ((element.value * 9/5) + 32).toFixed(2);
+        document.getElementById("fahrenheit").value = ((element.value * 9/5) + 32).toFixed(1);
     }
     else {
-        document.getElementById("celsius").value = ((element.value - 32) * 5/9).toFixed(2);
+        document.getElementById("celsius").value = ((element.value - 32) * 5/9).toFixed(1);
     }
 }
