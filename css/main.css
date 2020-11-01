@@ -95,25 +95,20 @@ a#donate:active {
   width: calc(100% - 25px);
 }
 
-.h-grid {
+.grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr max-content 1fr max-content;
       grid-template-columns: 1fr -webkit-max-content 1fr -webkit-max-content;
       grid-template-columns: 1fr max-content 1fr max-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.h-grid input {
+.grid input {
   max-width: 100%;
   overflow: hidden;
-}
-
-.v-grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: max-content max-content;
-      grid-template-rows: -webkit-max-content -webkit-max-content;
-      grid-template-rows: max-content max-content;
 }
 
 .info {
@@ -121,6 +116,8 @@ a#donate:active {
   margin-left: 25px;
   font-size: 0.9em;
   background-color: #EBFFFF;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
 label {

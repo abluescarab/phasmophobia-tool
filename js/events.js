@@ -1,31 +1,20 @@
-document.getElementById("difficulty").addEventListener("change", function(evt) {
-    calculateReward(evt.target);
-});
+document.addEventListener("click", function(evt) {
+    var element = evt.target;
 
-document.getElementById("reset").addEventListener("click", function(evt) {
-    var buttons = document.getElementsByClassName("multistate");
-    var checkboxes = document.querySelectorAll("input[type=checkbox]");
-    var options = document.getElementsByTagName("select");
-
-    document.getElementById("ghost-name").value = "";
-    document.getElementById("reward").textContent = 0;
-    document.getElementById("reward").dataset.baseValue = 0;
-    document.getElementById("alone").checked = false;
-    document.getElementById("everyone").checked = true;
-
-    for(var button of buttons) {
-        setState(button, states.none);
+    if(element.classList.contains("toggle")) {
+        toggle(element);
+        evt.stopPropagation();
     }
 
-    for(var checkbox of checkboxes) {
-        checkbox.checked = false;
+    if(element.type && element.type === "checkbox") {
+        checkReward(element);
+        evt.stopPropagation();
     }
 
-    for(var select of options) {
-        select.selectedIndex = 0;
+    if(element.id === "reset") {
+        reset();
+        evt.stopPropagation();
     }
-
-    checkObjectiveOptions(true);
 });
 
 document.getElementById("celsius").addEventListener("input", function(evt) {
@@ -36,45 +25,9 @@ document.getElementById("fahrenheit").addEventListener("input", function(evt) {
     convertTemperature(evt.target);
 });
 
-for(var toggle of document.getElementsByClassName("toggle")) {
-    toggle.addEventListener("click", function(evt) {
-        var textContent = evt.target.textContent;
-        var substring = textContent.substr(textContent.indexOf(" ") + 1);
-        var newState = toggleState(evt.target, substring);
-
-        if(typeof evt.target.dataset.toggleId !== "undefined") {
-            toggleId(evt.target.dataset.toggleId, newState, "block");
-        }
-        else if(typeof evt.target.dataset.toggleClass !== "undefined") {
-            toggleClasses(evt.target.dataset.toggleClass, newState, "block");
-        }
-    });
-}
-
-for(var checkbox of document.querySelectorAll("input[type=checkbox]")) {
-    checkbox.addEventListener("click", function(evt) {
-        var checkedEvidence = false;
-        var parent = evt.target.parentElement.parentElement;
-
-        if(parent.id === "objectives") {
-            console.log("checked");
-            var select = getSibling(evt.target);
-
-            if(select.tagName === "SELECT") {
-                var photoEvidence = document.getElementById(select.value);
-
-                if(photoEvidence !== null &&
-                    evt.target.checked &&
-                    !photoEvidence.checked) {
-                    photoEvidence.checked = true;
-                    checkedEvidence = true;
-                }
-            }
-        }
-
-        calculateReward(evt.target, checkedEvidence);
-    });
-}
+document.getElementById("difficulty").addEventListener("change", function(evt) {
+    calculateReward(evt.target);
+});
 
 for(var select of document.querySelectorAll("#objectives select")) {
     select.addEventListener("change", function(evt) {

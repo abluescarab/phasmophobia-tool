@@ -60,6 +60,59 @@ function checkGhosts() {
     });
 }
 
+function checkReward(element) {
+    var checkedEvidence = false;
+    var parent = element.parentElement.parentElement;
+
+    if(parent.id === "objectives") {
+        var select = getSibling(element);
+
+        if(select.tagName === "SELECT") {
+            var photoEvidence = document.getElementById(select.value);
+
+            if(photoEvidence !== null &&
+                element.checked &&
+                !photoEvidence.checked) {
+                photoEvidence.checked = true;
+                checkedEvidence = true;
+            }
+        }
+    }
+
+    if(parent.id === "objectives" || parent.id === "photo-evidence")
+        calculateReward(element, checkedEvidence);
+}
+
+function checkObjectiveOptions(reset = false) {
+    var options = document.querySelectorAll("[id^=objective-] option[id]");
+    var selectedOptions = [].slice.call(document.querySelectorAll("[id^=objective-] option[id]:checked"));
+    var selectedOptionNames = selectedOptions.map(o => o.id);
+
+    for(var option of options) {
+        if(!reset &&
+            selectedOptionNames.includes(option.id) &&
+            !selectedOptions.includes(option)) {
+            option.style.display = "none";
+        }
+        else {
+            option.style.display = "block";
+        }
+    }
+}
+
+function toggle(element) {
+    var textContent = element.textContent;
+    var substring = textContent.substr(textContent.indexOf(" ") + 1);
+    var newState = toggleState(element, substring);
+
+    if(typeof element.dataset.toggleId !== "undefined") {
+        toggleId(element.dataset.toggleId, newState, "block");
+    }
+    else if(typeof element.dataset.toggleClass !== "undefined") {
+        toggleClasses(element.dataset.toggleClass, newState, "block");
+    }
+}
+
 function toggleState(element, textAppend) {
     var newState = (element.dataset.state === states.yes.data ?
         states.no : states.yes);
@@ -107,6 +160,53 @@ function calculateReward(element, addExtra = false) {
     rewardSpan.textContent = reward * multiplier;
 }
 
+function convertTemperature(element) {
+    var otherElement = document.getElementById(element.id === "celsius" ? "fahrenheit" : "celsius");
+
+    if(element.value === "") {
+        otherElement.value = "";
+        return;
+    }
+
+    if(element.id === "celsius") {
+        document.getElementById("fahrenheit").value = ((element.value * 9/5) + 32).toFixed(1);
+    }
+    else {
+        document.getElementById("celsius").value = ((element.value - 32) * 5/9).toFixed(1);
+    }
+}
+
+function reset() {
+    var buttons = document.getElementsByClassName("multistate");
+    var checkboxes = document.querySelectorAll("input[type=checkbox]");
+    var options = document.getElementsByTagName("select");
+    var numberBoxes = document.querySelectorAll("input[type=number]");
+
+    document.getElementById("ghost-name").value = "";
+    document.getElementById("reward").textContent = 0;
+    document.getElementById("reward").dataset.baseValue = 0;
+    document.getElementById("alone").checked = false;
+    document.getElementById("everyone").checked = true;
+
+    for(var button of buttons) {
+        setState(button, states.none);
+    }
+
+    for(var checkbox of checkboxes) {
+        checkbox.checked = false;
+    }
+
+    for(var select of options) {
+        select.selectedIndex = 0;
+    }
+
+    for(var numberBox of numberBoxes) {
+        numberBox.value = "";
+    }
+
+    checkObjectiveOptions(true);
+}
+
 function getSibling(element, next = true) {
     var sibling = (next ? element.nextSibling : element.previousSibling);
 
@@ -115,30 +215,4 @@ function getSibling(element, next = true) {
     }
 
     return sibling;
-}
-
-function checkObjectiveOptions(reset = false) {
-    var options = document.querySelectorAll("[id^=objective-] option[id]");
-    var selectedOptions = [].slice.call(document.querySelectorAll("[id^=objective-] option[id]:checked"));
-    var selectedOptionNames = selectedOptions.map(o => o.id);
-
-    for(var option of options) {
-        if(!reset &&
-            selectedOptionNames.includes(option.id) &&
-            !selectedOptions.includes(option)) {
-            option.style.display = "none";
-        }
-        else {
-            option.style.display = "block";
-        }
-    }
-}
-
-function convertTemperature(element) {
-    if(element.id === "celsius") {
-        document.getElementById("fahrenheit").value = ((element.value * 9/5) + 32).toFixed(1);
-    }
-    else {
-        document.getElementById("celsius").value = ((element.value - 32) * 5/9).toFixed(1);
-    }
 }
