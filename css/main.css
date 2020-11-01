@@ -74,9 +74,9 @@ a#donate:active {
   }
 }
 
-.extra-info {
+.info {
   margin-top: 3px;
-  margin-left: 20px;
+  margin-left: 25px;
   font-size: 0.9em;
   background-color: #EBFFFF;
 }
@@ -128,24 +128,6 @@ button.multistate:active {
   background-color: #fefefe;
 }
 
-ul {
-  list-style-position: inside;
-  list-style-type: none;
-}
-
-ul li {
-  padding-left: 10px;
-  padding-bottom: 3px;
-}
-
-ul li::before {
-  content: "\2022";
-}
-
-ul li span {
-  margin-left: 10px;
-}
-
 .column {
   width: 100%;
 }
@@ -189,7 +171,7 @@ ul li span {
 }
 
 #container .flex-item select {
-  width: calc(100% - (20px + 5px));
+  width: calc(100% - 25px);
 }
 
 #container .right-margin {

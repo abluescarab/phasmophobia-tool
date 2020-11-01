@@ -42,5 +42,14 @@ function setState(element, state) {
     element.style.color = state.color;
     element.dataset.state = state.data;
 
+    var sibling = getSibling(element);
+
+    if(state === states.no) {
+        sibling.style.color = "#777";
+    }
+    else {
+        sibling.style.color = "black";
+    }
+
     checkGhosts();
 }

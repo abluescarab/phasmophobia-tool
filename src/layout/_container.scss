@@ -8,15 +8,15 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        margin-top: $margin / 2;
+        margin-top: $flex-item-margin;
         align-items: center;
 
         :first-child {
-            margin-right: $margin / 2;
+            margin-right: $flex-item-margin;
         }
 
         select {
-            width: calc(100% - (#{$multistate-size} + #{$margin / 2}));
+            width: calc(100% - #{$multistate-size + $flex-item-margin});
         }
     }
 
