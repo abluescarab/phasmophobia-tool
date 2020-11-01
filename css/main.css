@@ -227,6 +227,10 @@ button.multistate:active {
   border-bottom: 1px solid black;
 }
 
+#container #ghost-name {
+  text-transform: capitalize;
+}
+
 header {
   margin-bottom: 10px;
   width: 100%;
