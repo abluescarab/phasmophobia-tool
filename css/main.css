@@ -23,6 +23,7 @@ button:not(.multistate) {
 input[type="checkbox"] {
   width: 20px;
   height: 20px;
+  margin-right: 5px;
   padding: 0;
   background-color: #f9f9f9;
   border: 1px solid #777;
@@ -92,11 +93,6 @@ a#donate:active {
 
 .flexbox select {
   width: calc(100% - 25px);
-}
-
-.flexbox input {
-  width: 50px;
-  margin-right: 5px;
 }
 
 .info {

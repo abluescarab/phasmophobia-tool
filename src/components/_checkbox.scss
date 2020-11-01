@@ -1,6 +1,7 @@
 input[type="checkbox"] {
     width: $multistate-size;
     height: $multistate-size;
+    margin-right: $flexbox-margin;
     padding: 0;
 
     background-color: #f9f9f9;
