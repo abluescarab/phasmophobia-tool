@@ -1,0 +1,16 @@
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: $flexbox-margin;
+    align-items: center;
+
+    select {
+        width: calc(100% - #{$multistate-size + $flexbox-margin});
+    }
+
+    input {
+        width: 50px;
+        margin-right: $flexbox-margin;
+    }
+}

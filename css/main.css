@@ -74,6 +74,31 @@ a#donate:active {
   }
 }
 
+.flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flexbox select {
+  width: calc(100% - 25px);
+}
+
+.flexbox input {
+  width: 50px;
+  margin-right: 5px;
+}
+
 .info {
   margin-top: 3px;
   margin-left: 25px;
@@ -112,6 +137,7 @@ button.multistate {
           user-select: none;
   width: 20px;
   height: 20px;
+  margin-right: 5px;
   padding: 0;
   background-color: #f9f9f9;
   border: 1px solid #777;
@@ -148,30 +174,6 @@ button.multistate:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-#container .flex-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-top: 5px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#container .flex-item :first-child {
-  margin-right: 5px;
-}
-
-#container .flex-item select {
-  width: calc(100% - 25px);
 }
 
 #container .right-margin {
