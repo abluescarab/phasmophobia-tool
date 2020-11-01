@@ -4,6 +4,12 @@
     display: flex;
     flex-direction: column;
 
+    & > div:first-of-type {
+        margin-bottom: $margin;
+        padding-bottom: $margin;
+        border-bottom: 1px solid black;
+    }
+
     .right-margin {
         margin-right: $margin;
     }
@@ -20,11 +26,6 @@
         }
     }
 
-    .vertical-grid {
-        display: grid;
-        grid-template-rows: max-content max-content;
-    }
-
     .reflow {
         display: flex;
         align-items: center;
@@ -34,12 +35,6 @@
         @include desktop {
             flex-direction: row;
         }
-    }
-
-    & > div:first-of-type {
-        margin-bottom: $margin;
-        padding-bottom: $margin / 2;
-        border-bottom: 1px solid black;
     }
 
     #ghost-name {

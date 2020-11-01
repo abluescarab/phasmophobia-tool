@@ -95,6 +95,27 @@ a#donate:active {
   width: calc(100% - 25px);
 }
 
+.h-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr max-content 1fr max-content;
+      grid-template-columns: 1fr -webkit-max-content 1fr -webkit-max-content;
+      grid-template-columns: 1fr max-content 1fr max-content;
+}
+
+.h-grid input {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.v-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: max-content max-content;
+      grid-template-rows: -webkit-max-content -webkit-max-content;
+      grid-template-rows: max-content max-content;
+}
+
 .info {
   margin-top: 3px;
   margin-left: 25px;
@@ -172,6 +193,12 @@ button.multistate:active {
           flex-direction: column;
 }
 
+#container > div:first-of-type {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
 #container .right-margin {
   margin-right: 10px;
 }
@@ -186,14 +213,6 @@ button.multistate:active {
 
 #container .section-title + div {
   margin-top: 5px;
-}
-
-#container .vertical-grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: max-content max-content;
-      grid-template-rows: -webkit-max-content -webkit-max-content;
-      grid-template-rows: max-content max-content;
 }
 
 #container .reflow {
@@ -217,12 +236,6 @@ button.multistate:active {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-}
-
-#container > div:first-of-type {
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid black;
 }
 
 #container #ghost-name {

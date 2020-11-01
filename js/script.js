@@ -23,7 +23,7 @@ const ghosts = Object.freeze({
 });
 
 function checkGhosts() {
-    var buttons = Array.prototype.slice.call(document.getElementsByClassName("multistate"));
+    var buttons = Array.prototype.slice.call(document.getElementsByClassName("tristate"));
     var elements = document.getElementsByClassName("ghost");
 
     Array.prototype.forEach.call(elements, function(elem) {
@@ -131,5 +131,14 @@ function checkObjectiveOptions(reset = false) {
         else {
             option.style.display = "block";
         }
+    }
+}
+
+function convertTemperature(element) {
+    if(element.id === "celsius") {
+        document.getElementById("fahrenheit").value = ((element.value * 9/5) + 32).toFixed(2);
+    }
+    else {
+        document.getElementById("celsius").value = ((element.value - 32) * 5/9).toFixed(2);
     }
 }

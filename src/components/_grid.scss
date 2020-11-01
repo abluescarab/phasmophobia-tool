@@ -1,0 +1,14 @@
+.h-grid {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr max-content;
+
+    input {
+        max-width: 100%;
+        overflow: hidden;
+    }
+}
+
+.v-grid {
+    display: grid;
+    grid-template-rows: max-content max-content;
+}

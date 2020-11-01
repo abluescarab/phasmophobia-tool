@@ -24,7 +24,16 @@ document.getElementById("reset").addEventListener("click", function(evt) {
     for(var select of options) {
         select.selectedIndex = 0;
     }
+
     checkObjectiveOptions(true);
+});
+
+document.getElementById("celsius").addEventListener("input", function(evt) {
+    convertTemperature(evt.target);
+});
+
+document.getElementById("fahrenheit").addEventListener("input", function(evt) {
+    convertTemperature(evt.target);
 });
 
 for(var toggle of document.getElementsByClassName("toggle")) {
