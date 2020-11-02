@@ -23,11 +23,12 @@ const ghosts = Object.freeze({
 });
 
 function checkGhosts() {
-    var buttons = Array.prototype.slice.call(document.getElementsByClassName("tristate"));
-    var elements = document.getElementsByClassName("ghost");
+    var buttons = [].slice.call(document.querySelectorAll("#evidence .multistate"));
+    var elements = [].slice.call(document.getElementsByClassName("ghost"));
 
-    Array.prototype.forEach.call(elements, function(elem) {
-        var included = buttons.filter(b => ghosts[elem.id].includes(b.id));
+    for(var element of elements) {
+        var id = element.querySelector("button").id;
+        var included = buttons.filter(b => ghosts[id].includes(b.id));
         var excluded = buttons.filter(b => !included.includes(b));
         var isExcluded = false;
 
@@ -39,7 +40,7 @@ function checkGhosts() {
         }
 
         if(isExcluded) {
-            elem.style.display = "none";
+            element.style.display = "none";
         }
 
         if(!isExcluded) {
@@ -51,13 +52,13 @@ function checkGhosts() {
             }
 
             if(isExcluded) {
-                elem.style.display = "none";
+                element.style.display = "none";
             }
             else {
-                elem.style.display = "block";
+                element.style.display = "flex";
             }
         }
-    });
+    }
 }
 
 function checkReward(element) {
