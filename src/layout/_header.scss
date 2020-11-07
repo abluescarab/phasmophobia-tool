@@ -6,11 +6,6 @@ header {
         line-height: $button-size;
     }
 
-    button, a {
-        float: left;
-        display: block;
-    }
-
     @include desktop {
         h1 {
             float: left;

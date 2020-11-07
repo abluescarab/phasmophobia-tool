@@ -1,0 +1,25 @@
+.dark-theme {
+    background-color: black;
+    color: white;
+
+    a {
+        color: #75d1ff;
+    }
+
+    section {
+        background-color: #2f3453;
+        border: 1px solid white;
+    }
+
+    .multistate[data-state="no"] + label {
+        color: #bbb;
+    }
+
+    .info {
+        background-color: #a35129;
+    }
+
+    #container > div:first-of-type {
+        border-bottom: 1px solid white;
+    }
+}

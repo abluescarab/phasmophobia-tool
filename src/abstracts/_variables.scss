@@ -1,18 +1,16 @@
+// Main variables
 $font-size: 17px;
-$light-blue: #EBFFFF;
-$light-cream: #FFFFF0;
-
-$multistate-size: 20px;
-$multistate-font-size: $multistate-size - 1px;
-
-$button-size: 30px;
-
 $container-size: 700px;
 $margin: 10px;
+
+// Misc. elements
+$multistate-size: 20px;
+$multistate-font-size: $multistate-size - 1px;
+$button-size: 30px;
+$link-font-size: .9em;
 $flexbox-margin: $margin / 2;
 
-$link-font-size: .9em;
-
+// Donate button
 $donate-padding-left: $margin / 2;
 $donate-padding-right: $margin;
 $donate-bg: #FBAA19;

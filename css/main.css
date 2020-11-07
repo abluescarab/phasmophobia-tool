@@ -4,8 +4,6 @@
 }
 
 body {
-  background-color: white;
-  color: black;
   margin: 10px;
 }
 
@@ -17,6 +15,7 @@ body {
 button:not(.multistate) {
   height: 30px;
   min-width: 100px;
+  padding: 0 5px;
   cursor: pointer;
 }
 
@@ -91,7 +90,7 @@ a#donate:active {
           align-items: center;
 }
 
-.flexbox select {
+.flexbox .multistate + select {
   width: calc(100% - 25px);
 }
 
@@ -115,7 +114,6 @@ a#donate:active {
   margin-top: 3px;
   margin-left: 25px;
   font-size: 0.9em;
-  background-color: #EBFFFF;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
@@ -128,20 +126,13 @@ label {
 }
 
 a {
-  color: #336699;
   font-weight: normal;
   font-size: 0.9em;
-}
-
-a:visited {
-  color: #336699;
 }
 
 section {
   padding: 5px;
   margin-bottom: 5px;
-  background-color: #FFFFF0;
-  border: 1px solid black;
 }
 
 button.multistate {
@@ -166,6 +157,14 @@ button.multistate {
 button.multistate:active {
   border: 1px solid #aaa;
   background-color: #fefefe;
+}
+
+button.multistate[data-state="yes"] {
+  color: green;
+}
+
+button.multistate[data-state="no"] {
+  color: red;
 }
 
 .column {
@@ -193,7 +192,6 @@ button.multistate:active {
 #container > div:first-of-type {
   margin-bottom: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px solid black;
 }
 
 #container .right-margin {
@@ -248,11 +246,6 @@ header h1 {
   line-height: 30px;
 }
 
-header button, header a {
-  float: left;
-  display: block;
-}
-
 @media (min-width: 700px) {
   header h1 {
     float: left;
@@ -273,4 +266,60 @@ header button, header a {
   #right {
     width: 50%;
   }
+}
+
+.dark-theme {
+  background-color: black;
+  color: white;
+}
+
+.dark-theme a {
+  color: #75d1ff;
+}
+
+.dark-theme section {
+  background-color: #2f3453;
+  border: 1px solid white;
+}
+
+.dark-theme .multistate[data-state="no"] + label {
+  color: #bbb;
+}
+
+.dark-theme .info {
+  background-color: #a35129;
+}
+
+.dark-theme #container > div:first-of-type {
+  border-bottom: 1px solid white;
+}
+
+.light-theme {
+  background-color: white;
+  color: black;
+}
+
+.light-theme a {
+  color: #336699;
+}
+
+.light-theme a:visited {
+  color: #336699;
+}
+
+.light-theme section {
+  background-color: #FFFFF0;
+  border: 1px solid black;
+}
+
+.light-theme .multistate[data-state="no"] + label {
+  color: #777;
+}
+
+.light-theme .info {
+  background-color: #ceffff;
+}
+
+.light-theme #container > div:first-of-type {
+  border-bottom: 1px solid black;
 }

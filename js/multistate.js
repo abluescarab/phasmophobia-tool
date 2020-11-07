@@ -1,18 +1,15 @@
 const states = Object.freeze({
     yes: {
         data: "yes",
-        text: "\u2713",
-        color: "green"
+        text: "\u2713"
     },
     no: {
         data: "no",
-        text: "\u2715",
-        color: "red"
+        text: "\u2715"
     },
     none: {
         data: "none",
-        text: "",
-        color: "black"
+        text: ""
     }
 });
 
@@ -39,17 +36,6 @@ function nextState(evt) {
 
 function setState(element, state) {
     element.textContent = state.text;
-    element.style.color = state.color;
     element.dataset.state = state.data;
-
-    var sibling = getSibling(element);
-
-    if(state === states.no) {
-        sibling.style.color = "#777";
-    }
-    else {
-        sibling.style.color = "black";
-    }
-
     checkGhosts();
 }

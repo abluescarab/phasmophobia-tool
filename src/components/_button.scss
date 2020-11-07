@@ -1,5 +1,6 @@
 button:not(.multistate) {
     height: $button-size;
     min-width: 100px;
+    padding: 0 $margin / 2;
     cursor: pointer;
 }

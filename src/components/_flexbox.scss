@@ -5,7 +5,7 @@
     margin-top: $flexbox-margin;
     align-items: center;
 
-    select {
+    .multistate + select {
         width: calc(100% - #{$multistate-size + $flexbox-margin});
     }
 }

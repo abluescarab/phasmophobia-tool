@@ -19,4 +19,12 @@ button.multistate {
         border: 1px solid #aaa;
         background-color: #fefefe;
     }
+
+    &[data-state="yes"] {
+        color: green;
+    }
+
+    &[data-state="no"] {
+        color: red;
+    }
 }

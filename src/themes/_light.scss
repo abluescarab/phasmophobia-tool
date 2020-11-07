@@ -1,0 +1,29 @@
+.light-theme {
+    background-color: white;
+    color: black;
+
+    a {
+        color: #336699;
+
+        &:visited {
+            color: #336699;
+        }
+    }
+
+    section {
+        background-color: #FFFFF0;
+        border: 1px solid black;
+    }
+
+    .multistate[data-state="no"] + label {
+        color: #777;
+    }
+
+    .info {
+        background-color: #ceffff;
+    }
+
+    #container > div:first-of-type {
+        border-bottom: 1px solid black;
+    }
+}
