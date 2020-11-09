@@ -39,10 +39,6 @@ function checkGhosts() {
             }
         }
 
-        if(isExcluded) {
-            element.style.display = "none";
-        }
-
         if(!isExcluded) {
             for(var i = 0; i < included.length; i++) {
                 if(included[i].dataset.state === states.no.data) {
@@ -50,13 +46,13 @@ function checkGhosts() {
                     break;
                 }
             }
+        }
 
-            if(isExcluded) {
-                element.style.display = "none";
-            }
-            else {
-                element.style.display = "flex";
-            }
+        if(isExcluded) {
+            element.style.display = "none";
+        }
+        else {
+            element.style.display = "flex";
         }
     }
 }
