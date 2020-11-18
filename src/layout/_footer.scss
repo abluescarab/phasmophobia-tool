@@ -1,0 +1,19 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: ($margin / 2) $margin;
+    line-height: $small-font-size;
+    text-align: right;
+
+    p {
+        max-width: $container-size;
+        margin: 0 auto;
+    }
+
+    p, a {
+        font-size: $small-font-size;
+    }
+}

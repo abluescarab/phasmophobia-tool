@@ -1,0 +1,10 @@
+.toggle {
+    font-size: $small-font-size;
+    font-weight: normal;
+    text-decoration: underline;
+    user-select: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
