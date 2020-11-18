@@ -2,13 +2,26 @@
     background-color: black;
     color: white;
 
-    .toggle {
-        color: #75d1ff;
+    a {
+        color: $dark-link-color;
+
+        &:visited {
+            color: $dark-link-color;
+        }
     }
 
     section {
         background-color: $dark-bg;
         border: 1px solid white;
+    }
+
+    footer {
+        background-color: $dark-bg;
+        border-top: 1px solid white;
+    }
+
+    .toggle {
+        color: $dark-link-color;
     }
 
     .multistate[data-state="no"] + label {

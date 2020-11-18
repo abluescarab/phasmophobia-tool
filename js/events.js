@@ -29,7 +29,7 @@ document.getElementById("difficulty").addEventListener("change", function(evt) {
     calculateReward(evt.target);
 });
 
-document.getElementById("theme").addEventListener("click", function(evt) {
+document.getElementById("change-theme").addEventListener("click", function(evt) {
     var body = document.getElementsByTagName("body")[0];
     var remove = "light";
     var add = "dark";

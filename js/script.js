@@ -98,43 +98,46 @@ function checkObjectiveOptions(reset = false) {
 }
 
 function toggle(element) {
-    var textContent = element.textContent;
-    var substring = textContent.substr(textContent.indexOf(" ") + 1);
-    var newState = toggleState(element, substring);
+    var newState = toggleElementState(element);
 
-    if(typeof element.dataset.toggleId !== "undefined") {
-        toggleId(element.dataset.toggleId, newState, "block");
+    if(element.id === "toggle-all") {
+        var toggles = [].slice.call(document.querySelectorAll("[data-toggle$='section']"));
+
+        for(var toggle of toggles) {
+            toggleElements(toggle.dataset.toggle, newState, "block");
+            setElementState(toggle, newState);
+        }
     }
-    else if(typeof element.dataset.toggleClass !== "undefined") {
-        toggleClasses(element.dataset.toggleClass, newState, "block");
+
+    if(typeof element.dataset.toggle !== "undefined") {
+        toggleElements(element.dataset.toggle, newState, "block");
     }
 }
 
-function toggleState(element, textAppend) {
-    var newState = (element.dataset.state === states.yes.data ?
-        states.no : states.yes);
-    var firstWord = element.textContent.substr(0, element.textContent.indexOf(" "));
-
-    element.dataset.state = newState.data;
-
-    if(firstWord === "show" || firstWord === "hide") {
-        element.textContent = (newState.data === states.yes.data ? "hide" : "show") + " " + textAppend;
-    }
-
+function toggleElementState(element) {
+    var newState = element.dataset.state === states.yes.data ? states.no : states.yes;
+    setElementState(element, newState);
     return newState;
 }
 
-function toggleClasses(elementClass, state, shownDisplayValue) {
-    var elements = document.getElementsByClassName(elementClass);
+function setElementState(element, newState) {
+    var substrings = element.textContent.split(/ (.+)/);
 
-    Array.prototype.forEach.call(elements, function(element) {
-        element.style.display = (state === states.yes ? shownDisplayValue : "none");
-    });
+    element.dataset.state = newState.data;
+
+    if(substrings[0] === "show" || substrings[0] === "hide") {
+        element.textContent = (newState.data === states.yes.data ? "hide" : "show") + " " + substrings[1];
+    }
 }
 
-function toggleId(elementId, state, shownDisplayValue) {
-    var element = document.getElementById(elementId);
-    element.style.display = (state === states.yes ? shownDisplayValue : "none");
+function toggleElements(selectors, state, shownDisplayValue) {
+    for(var selector of selectors.split(" ")) {
+        var elements = document.querySelectorAll(selector);
+
+        for(var element of elements) {
+            element.style.display = (state === states.yes ? shownDisplayValue : "none");
+        }
+    }
 }
 
 function calculateReward(element, addExtra = false) {

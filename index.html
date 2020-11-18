@@ -26,7 +26,6 @@
             <div class="flexbox">
                 <a href="https://ko-fi.com/W7W2V072" target="_blank" id="donate"><img src="img/Ko-fi_logo_RGB_Outline.png" alt="Buy Me a Coffee at ko-fi.com" /><span>Donate</span></a>
                 <button id="reset" class="right-margin">Reset</button>
-                <button id="theme">Theme</button>
             </div>
         </header>
 
@@ -48,8 +47,8 @@
         <div>
             <div class="column" id="left">
                 <section>
-                    <p class="section-title">Objectives <span data-state="no" data-toggle-id="objectives" class="toggle">show section</span></p>
-                    <div id="objectives" class="hidden">
+                    <p class="section-title">Objectives <span data-state="no" data-toggle="#objectives-section" class="toggle">show section</span></p>
+                    <div id="objectives-section" class="hidden">
                         <div class="flexbox">
                             <input type="checkbox" id="journal-objective"/>
                             <label for="journal-objective">Enter ghost type in journal</label>
@@ -139,13 +138,13 @@
 
                     <div class="flexbox">
                         <button id="freezing-temperatures" class="multistate" data-state="none"></button>
-                        <label for="freezing-temperatures">Freezing Temperatures</label>&nbsp;<a href="#" data-state="no" data-toggle-id="help-freezing-temperatures" class="toggle">?</a>
+                        <label for="freezing-temperatures">Freezing Temperatures</label>&nbsp;<a href="#" data-state="no" data-toggle="#help-freezing-temperatures" class="toggle">?</a>
                         <p id="help-freezing-temperatures" class="info hidden">Anything below 3&deg;C/37.4&deg;F.</p>
                     </div>
                 </section>
 
                 <section>
-                    <p class="section-title">Possibilities <span data-state="no" data-toggle-class="ghost-evidence" class="toggle">show evidence</span></p>
+                    <p class="section-title">Possibilities <span data-state="no" data-toggle=".ghost-evidence" class="toggle">show evidence</span></p>
                     <div class="flexbox ghost">
                         <button id="spirit" class="multistate" data-states="none no" data-state="none"></button>
                         <label for="spirit">Spirit</label>
@@ -222,7 +221,7 @@
 
             <div class="column" id="right">
                 <section>
-                    <p class="section-title">Reward <span data-state="no" data-toggle-id="reward-section" class="toggle">show section</span></p>
+                    <p class="section-title">Reward <span data-state="no" data-toggle="#reward-section" class="toggle">show section</span></p>
                     <div id="reward-section" class="hidden">
                         <div class="grid">
                             <select id="difficulty" class="right-margin">
@@ -237,8 +236,8 @@
                 </section>
 
                 <section>
-                    <p class="section-title">Temperature Converter  <span data-state="no" data-toggle-id="temperature-converter" class="toggle">show section</span></p>
-                    <div id="temperature-converter" class="hidden">
+                    <p class="section-title">Temperature Converter  <span data-state="no" data-toggle="#temperature-converter-section" class="toggle">show section</span></p>
+                    <div id="temperature-converter-section" class="hidden">
                         <div class="grid">
                             <input type="number" id="celsius"/>
                             <label for="celsius" class="right-margin">&deg;C</label>
@@ -250,8 +249,8 @@
                 </section>
 
                 <section>
-                    <p class="section-title">Photo Evidence <span data-state="no" data-toggle-id="photo-evidence" class="toggle">show section</span></p>
-                    <div id="photo-evidence" class="hidden">
+                    <p class="section-title">Photo Evidence <span data-state="no" data-toggle="#photo-evidence-section" class="toggle">show section</span></p>
+                    <div id="photo-evidence-section" class="hidden">
                         <div class="flexbox">
                             <input type="checkbox" id="photo-bone"/>
                             <label for="photo-bone">Bone</label>
@@ -264,7 +263,7 @@
 
                         <div class="flexbox">
                             <input type="checkbox" id="photo-ghost-interaction"/>
-                            <label for="photo-ghost-interaction">Ghost Interaction</label>&nbsp;<a href="#" data-state="no" data-toggle-id="help-ghost-interaction" class="toggle">?</a>
+                            <label for="photo-ghost-interaction">Ghost Interaction</label>&nbsp;<a href="#" data-state="no" data-toggle="#help-ghost-interaction" class="toggle">?</a>
                             <p id="help-ghost-interaction" class="info hidden">Ghost activities, hidden objects, signed Ghost Writing books, etc.</p>
                         </div>
 
@@ -280,7 +279,7 @@
 
                         <div class="flexbox">
                             <input type="checkbox" id="photo-footprints"/>
-                            <label for="photo-footprints">Footprints</label>&nbsp;<a href="#" data-state="no" data-toggle-id="help-footprints" class="toggle">?</a>
+                            <label for="photo-footprints">Footprints</label>&nbsp;<a href="#" data-state="no" data-toggle="#help-footprints" class="toggle">?</a>
                             <p id="help-footprints" class="info hidden">Footprints will appear with UV when a ghost walks through salt.</p>
                         </div>
 
@@ -297,8 +296,8 @@
                 </section>
 
                 <section>
-                    <p class="section-title">Used Equipment <span data-state="no" data-toggle-id="used-equipment" class="toggle">show section</span></p>
-                    <div id="used-equipment" class="hidden">
+                    <p class="section-title">Used Equipment <span data-state="no" data-toggle="#used-equipment-section" class="toggle">show section</span></p>
+                    <div id="used-equipment-section" class="hidden">
                         <div class="flexbox">
                             <input type="checkbox" id="equipment-emf-reader"/>
                             <label for="equipment-emf-reader">EMF Reader</label>
@@ -378,6 +377,10 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <p><span id="change-theme" class="toggle">change theme</span> &bull; <span data-state="no" id="toggle-all" class="toggle">show all sections</span> &bull; <a href="#">back to top</a></p>
+    </footer>
 
     <script src="js/script.js"></script>
     <script src="js/multistate.js"></script>
