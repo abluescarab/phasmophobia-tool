@@ -2,16 +2,12 @@
     background-color: white;
     color: black;
 
-    a {
+    .toggle {
         color: #336699;
-
-        &:visited {
-            color: #336699;
-        }
     }
 
     section {
-        background-color: #FFFFF0;
+        background-color: $light-bg;
         border: 1px solid black;
     }
 

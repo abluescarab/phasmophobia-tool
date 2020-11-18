@@ -2,12 +2,12 @@
     background-color: black;
     color: white;
 
-    a {
+    .toggle {
         color: #75d1ff;
     }
 
     section {
-        background-color: #2f3453;
+        background-color: $dark-bg;
         border: 1px solid white;
     }
 

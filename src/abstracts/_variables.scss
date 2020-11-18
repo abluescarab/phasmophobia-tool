@@ -1,5 +1,6 @@
 // Main variables
 $font-size: 17px;
+$small-font-size: .9em;
 $container-size: 700px;
 $margin: 10px;
 
@@ -7,7 +8,6 @@ $margin: 10px;
 $multistate-size: 20px;
 $multistate-font-size: $multistate-size - 1px;
 $button-size: 30px;
-$link-font-size: .9em;
 $flexbox-margin: $margin / 2;
 
 // Donate button
@@ -18,3 +18,7 @@ $donate-bg-hover: #f0a118;
 $donate-bg-active: #ffb433;
 $donate-border-width-large: 1px;
 $donate-border-width-small: .1px;
+
+// Themes
+$light-bg: #FFFFF0;
+$dark-bg: #2f3453;
