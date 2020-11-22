@@ -43,7 +43,7 @@ document.getElementById("change-theme").addEventListener("click", function(evt) 
     body.classList.add(add + "-theme");
 });
 
-for(var select of document.querySelectorAll("#objectives select")) {
+for(var select of document.querySelectorAll("#objectives-section select")) {
     select.addEventListener("change", function(evt) {
         getSibling(evt.target, false).checked = false;
         checkObjectiveOptions();

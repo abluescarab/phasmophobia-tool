@@ -61,7 +61,7 @@ function checkReward(element) {
     var checkedEvidence = false;
     var parent = element.parentElement.parentElement;
 
-    if(parent.id === "objectives") {
+    if(parent.id === "objectives-section") {
         var select = getSibling(element);
 
         if(select.tagName === "SELECT") {
@@ -76,19 +76,18 @@ function checkReward(element) {
         }
     }
 
-    if(parent.id === "objectives" || parent.id === "photo-evidence")
+    if(parent.id === "objectives-section" || parent.id === "photo-evidence-section")
         calculateReward(element, checkedEvidence);
 }
 
 function checkObjectiveOptions(reset = false) {
-    var options = document.querySelectorAll("[id^=objective-] option[id]");
-    var selectedOptions = [].slice.call(document.querySelectorAll("[id^=objective-] option[id]:checked"));
-    var selectedOptionNames = selectedOptions.map(o => o.id);
+    var query = "[id^=objective-] option:not(:first-child)";
+    var all = document.querySelectorAll(query);
+    var selected = [].slice.call(document.querySelectorAll(query + ":checked"));
+    var selectedNames = selected.map(o => o.classList[0]);
 
-    for(var option of options) {
-        if(!reset &&
-            selectedOptionNames.includes(option.id) &&
-            !selectedOptions.includes(option)) {
+    for(var option of all) {
+        if(!reset && selectedNames.includes(option.classList[0]) && !selected.includes(option)) {
             option.style.display = "none";
         }
         else {
