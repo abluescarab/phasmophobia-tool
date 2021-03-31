@@ -1,9 +1,41 @@
+document.addEventListener("DOMContentLoaded", function(evt) {
+    var banner = document.getElementById("cookie-banner");
+
+    if(getCookie(cookieNames.cookiesAllowed) === null)
+        banner.style.display = "block";
+    else
+        banner.style.display = "none";
+
+    if(getCookie(cookieNames.theme) === "dark") {
+        changeTheme("dark");
+    }
+
+    var sectionStates = getCookie(cookieNames.sectionStates)?.split(",");
+
+    if(sectionStates !== undefined) {
+        var toggles = [].slice.call(document.querySelectorAll("[data-toggle$='section']"));
+
+        for(var i = 0; i < toggles.length; i++) {
+            toggle(toggles[i], states[sectionStates[i]]);
+        }
+
+        if(sectionStates.filter(e => e === "yes").length === toggles.length) {
+            setElementState(document.getElementById("toggle-all"), states.yes);
+        }
+    }
+});
+
 document.addEventListener("click", function(evt) {
     var element = evt.target;
 
     if(element.classList.contains("toggle")) {
         toggle(element);
         evt.stopPropagation();
+
+        if(getCookie(cookieNames.cookiesAllowed) === "true") {
+            var toggles = [].slice.call(document.querySelectorAll("[data-toggle$='section']")).map(e => e.dataset.state);
+            setCookie(cookieNames.sectionStates, toggles, 365);
+        }
     }
 
     if(element.type && element.type === "checkbox") {
@@ -14,6 +46,16 @@ document.addEventListener("click", function(evt) {
     if(element.id === "reset") {
         reset();
         evt.stopPropagation();
+    }
+
+    if(element.id === "accept-cookies") {
+        setCookie(cookieNames.cookiesAllowed, "true", 365);
+        document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    if(element.id === "decline-cookies") {
+        setCookie(cookieNames.cookiesAllowed, "false", 365);
+        document.getElementById("cookie-banner").style.display = "none";
     }
 });
 
@@ -30,17 +72,11 @@ document.getElementById("difficulty").addEventListener("change", function(evt) {
 });
 
 document.getElementById("change-theme").addEventListener("click", function(evt) {
-    var body = document.getElementsByTagName("body")[0];
-    var remove = "light";
-    var add = "dark";
+    var newTheme = changeTheme();
 
-    if(body.classList.contains(add + "-theme")) {
-        remove = "dark";
-        add = "light";
+    if(getCookie(cookieNames.cookiesAllowed) === "true") {
+        setCookie(cookieNames.theme, newTheme, 365);
     }
-
-    body.classList.remove(remove + "-theme");
-    body.classList.add(add + "-theme");
 });
 
 for(var select of document.querySelectorAll("#objectives-section select")) {

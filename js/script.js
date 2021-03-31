@@ -1,27 +1,3 @@
-const evidence = Object.freeze({
-    emfLevel5: "emf-level-5",
-    spiritBox: "spirit-box",
-    freezingTemperatures: "freezing-temperatures",
-    fingerprints: "fingerprints",
-    ghostOrbs: "ghost-orbs",
-    ghostWriting: "ghost-writing"
-});
-
-const ghosts = Object.freeze({
-    spirit: [evidence.ghostWriting, evidence.fingerprints, evidence.spiritBox],
-    wraith: [evidence.fingerprints, evidence.spiritBox, evidence.freezingTemperatures],
-    phantom: [evidence.emfLevel5, evidence.freezingTemperatures, evidence.ghostOrbs],
-    poltergeist: [evidence.fingerprints, evidence.spiritBox, evidence.ghostOrbs],
-    banshee: [evidence.emfLevel5, evidence.fingerprints, evidence.freezingTemperatures],
-    jinn: [evidence.emfLevel5, evidence.spiritBox, evidence.ghostOrbs],
-    mare: [evidence.spiritBox, evidence.freezingTemperatures, evidence.ghostOrbs],
-    revenant: [evidence.emfLevel5, evidence.ghostWriting, evidence.fingerprints],
-    shade: [evidence.emfLevel5, evidence.ghostWriting, evidence.ghostOrbs],
-    demon: [evidence.ghostWriting, evidence.spiritBox, evidence.freezingTemperatures],
-    yurei: [evidence.ghostWriting, evidence.freezingTemperatures, evidence.ghostOrbs],
-    oni: [evidence.emfLevel5, evidence.ghostWriting, evidence.spiritBox]
-});
-
 function checkGhosts() {
     var buttons = [].slice.call(document.querySelectorAll("#evidence .multistate"));
     var elements = [].slice.call(document.getElementsByClassName("ghost"));
@@ -53,6 +29,9 @@ function checkGhosts() {
         }
         else {
             element.style.display = "flex";
+
+            // var checked = included.filter(i => i.dataset.state === states.yes.data);
+            // var elems = [].slice.call(element.querySelectorAll("span")).filter(e => checked.contains(e.classList));
         }
     }
 }
@@ -96,27 +75,26 @@ function checkObjectiveOptions(reset = false) {
     }
 }
 
-function toggle(element) {
-    var newState = toggleElementState(element);
+function toggle(element, newState = null) {
+    var toggledState = (newState ? newState : getNewState(element));
+    setElementState(element, toggledState);
 
     if(element.id === "toggle-all") {
         var toggles = [].slice.call(document.querySelectorAll("[data-toggle$='section']"));
 
         for(var toggle of toggles) {
-            toggleElements(toggle.dataset.toggle, newState, "block");
-            setElementState(toggle, newState);
+            toggleElements(toggle.dataset.toggle, toggledState, "block");
+            setElementState(toggle, toggledState);
         }
     }
 
     if(typeof element.dataset.toggle !== "undefined") {
-        toggleElements(element.dataset.toggle, newState, "block");
+        toggleElements(element.dataset.toggle, toggledState, "block");
     }
 }
 
-function toggleElementState(element) {
-    var newState = element.dataset.state === states.yes.data ? states.no : states.yes;
-    setElementState(element, newState);
-    return newState;
+function getNewState(element) {
+    return element.dataset.state === states.yes.data ? states.no : states.yes;
 }
 
 function setElementState(element, newState) {
@@ -185,7 +163,8 @@ function reset() {
     document.getElementById("reward").textContent = 0;
     document.getElementById("reward").dataset.baseValue = 0;
     document.getElementById("alone").checked = false;
-    document.getElementById("everyone").checked = true;
+    document.getElementById("everyone").checked = false;
+    document.getElementById("unknown").checked = true;
 
     for(var button of buttons) {
         setState(button, states.none);
@@ -214,4 +193,48 @@ function getSibling(element, next = true) {
     }
 
     return sibling;
+}
+
+function changeTheme(theme = "") {
+    var body = document.getElementsByTagName("body")[0];
+    var oldTheme = "light";
+    var newTheme = "dark";
+
+    if(theme !== "") {
+        oldTheme = (theme === "light" ? "dark" : "light");
+        newTheme = (theme === "light" ? "light" : "dark");
+    }
+    else if(body.classList.contains(newTheme + "-theme")) {
+        oldTheme = "dark";
+        newTheme = "light";
+    }
+
+    body.classList.remove(oldTheme + "-theme");
+    body.classList.add(newTheme + "-theme");
+
+    return newTheme;
+}
+
+// modified from https://stackoverflow.com/a/25490531
+function getCookie(name) {
+    var result = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]*)');
+
+    if(result === null) {
+        return null;
+    }
+
+    return result.pop();
+}
+
+// copied from https://stackoverflow.com/a/24103596
+function setCookie(name, value, days) {
+    var expires = "";
+
+    if(days) {
+        var date = new Date();
+        date.setDate(date.getDate() + days);
+        expires = "; expires=" + date.toUTCString();
+    }
+
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
