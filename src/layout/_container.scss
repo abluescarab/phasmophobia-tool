@@ -1,17 +1,36 @@
 #container {
+    display: flex;
+    flex-flow: column wrap;
     max-width: $container-size;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: $font-size + ($margin * 2);
+    padding: $margin * 2;
+    box-shadow: $container-shadow;
+    min-height: calc(100vh - #{$margin * 4});
 
     & > div:first-of-type {
         margin-bottom: $margin;
         padding-bottom: $margin;
     }
 
+    & > .row {
+        align-items: flex-start;
+        margin-top: 0;
+    }
+
+    .column:first-child {
+        margin-right: $margin / 2;
+    }
+
+    .column:last-child {
+        margin-left: $margin / 2;
+    }
+
     .right-margin {
         margin-right: $margin;
+    }
+
+    .top-margin-half {
+        margin-top: $margin / 2;
     }
 
     .hidden {
@@ -23,17 +42,6 @@
 
         & + div {
             margin-top: $margin / 2;
-        }
-    }
-
-    .reflow {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin-bottom: $margin;
-
-        @include desktop {
-            flex-direction: row;
         }
     }
 

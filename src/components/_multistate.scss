@@ -1,30 +1,23 @@
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
 button.multistate {
     user-select: none;
     width: $multistate-size;
     height: $multistate-size;
     margin-right: $flexbox-margin;
     padding: 0;
-
-    background-color: #f9f9f9;
-    border: 1px solid #777;
-    border-radius: 3px;
-    outline: none;
-
-    line-height: $multistate-size;
     font-size: $multistate-font-size;
-    font-weight: bold;
-    text-align: center;
+
+    background-color: transparent;
+    border: 1px solid $border-color;
+    border-radius: 1px;
+    outline: none;
 
     &:active {
         border: 1px solid #aaa;
-        background-color: #fefefe;
     }
 
-    &[data-state="yes"] {
-        color: green;
-    }
-
-    &[data-state="no"] {
-        color: red;
+    &:not([data-state="none"]) {
+        border: 0;
     }
 }

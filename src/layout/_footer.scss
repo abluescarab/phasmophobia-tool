@@ -3,6 +3,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
+    box-shadow: $container-shadow;
 
     padding: ($margin / 2) $margin;
     line-height: $small-font-size;

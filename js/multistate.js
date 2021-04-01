@@ -1,11 +1,11 @@
 const states = Object.freeze({
     yes: {
         data: "yes",
-        text: "\u2713"
+        text: "done"
     },
     no: {
         data: "no",
-        text: "\u2715"
+        text: "close"
     },
     none: {
         data: "none",
@@ -13,13 +13,15 @@ const states = Object.freeze({
     }
 });
 
-Array.prototype.forEach.call(document.getElementsByClassName("multistate"),
-function(elem) {
-    elem.addEventListener("click", nextState, false);
+document.addEventListener("click", function(evt) {
+    var element = evt.target;
+
+    if(element.classList.contains("multistate")) {
+        nextState(element);
+    }
 });
 
-function nextState(evt) {
-    var element = evt.target;
+function nextState(element) {
     var allStates = [states.yes.data, states.no.data, states.none.data];
 
     if(typeof(element.dataset.states) !== "undefined") {
@@ -35,7 +37,7 @@ function nextState(evt) {
 }
 
 function setState(element, state) {
-    element.textContent = state.text;
+    element.innerHTML = state.text;
     element.dataset.state = state.data;
     checkGhosts();
 }

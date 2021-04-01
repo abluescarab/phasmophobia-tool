@@ -1,5 +1,5 @@
 .light-theme {
-    background-color: white;
+    background-color: #ffffff;
     color: black;
 
     a {
@@ -10,29 +10,52 @@
         }
     }
 
+    #container {
+        background-color: $light-element-bg;
+    }
+
     section {
-        background-color: $light-bg;
-        border: 1px solid black;
+        background-color: $light-element-bg;
+        border: 1px solid $border-color;
+        box-shadow: 0 0 7px rgba(0, 0, 0, .2);
+    }
+
+    select {
+        background-color: transparent;
+        color: black;
+        border: 1px solid $border-color;
+    }
+
+    input {
+        background-color: transparent;
+        border: 1px solid $border-color;
     }
 
     footer {
-        background-color: $light-bg;
-        border-top: 1px solid black;
+        background-color: $light-element-bg;
     }
 
     .toggle {
         color: $light-link-color;
     }
 
-    .multistate[data-state="no"] + label {
-        color: #777;
+    .multistate {
+        color: white;
+
+        &:not([data-state="none"]) {
+            background-color: $dark-link-color;
+        }
+
+        &[data-state="no"] + label {
+            color: #777;
+        }
     }
 
     .info {
-        background-color: #ceffff;
+        background-color: $dark-link-color;
     }
 
     #container > div:first-of-type {
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid $border-color;
     }
 }

@@ -47,10 +47,10 @@ function checkReward(element) {
             var photoEvidence = document.getElementById(select.value);
 
             if(photoEvidence !== null &&
-                element.checked &&
-                !photoEvidence.checked) {
-                photoEvidence.checked = true;
-                checkedEvidence = true;
+                element.dataset.state === states.yes.data &&
+                photoEvidence.dataset.state !== states.yes.data) {
+                    setState(photoEvidence, states.yes);
+                    checkedEvidence = true;
             }
         }
     }
@@ -124,7 +124,7 @@ function calculateReward(element, addExtra = false) {
     var multiplier = parseInt(difficulty.value);
 
     if(element !== difficulty) {
-        reward += (element.checked ? 10 : -10);
+        reward += (element.dataset.state === states.yes.data ? 10 : -10);
 
         if(addExtra) {
             reward += 10;
@@ -155,7 +155,6 @@ function convertTemperature(element) {
 
 function reset() {
     var buttons = document.getElementsByClassName("multistate");
-    var checkboxes = document.querySelectorAll("input[type=checkbox]");
     var options = document.getElementsByTagName("select");
     var numberBoxes = document.querySelectorAll("input[type=number]");
 
@@ -168,10 +167,6 @@ function reset() {
 
     for(var button of buttons) {
         setState(button, states.none);
-    }
-
-    for(var checkbox of checkboxes) {
-        checkbox.checked = false;
     }
 
     for(var select of options) {

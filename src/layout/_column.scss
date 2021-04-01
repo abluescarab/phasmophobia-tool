@@ -1,7 +1,5 @@
 .column {
-    width: 100%;
-
-    @include desktop {
-        float: left;
-    }
+    display: flex;
+    flex-flow: column wrap;
+    flex: 1;
 }

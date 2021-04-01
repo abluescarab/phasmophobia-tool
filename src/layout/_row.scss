@@ -1,0 +1,13 @@
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    align-items: center;
+    margin-top: $margin / 2;
+    flex: 0 0 0;
+    min-width: 220px;
+
+    // .multistate + select {
+    //     width: calc(100% - #{$multistate-size + $flexbox-margin});
+    // }
+}

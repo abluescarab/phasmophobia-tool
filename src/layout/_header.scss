@@ -4,15 +4,6 @@ header {
 
     h1 {
         line-height: $button-size;
-    }
-
-    @include desktop {
-        h1 {
-            float: left;
-        }
-
-        div {
-            float: right;
-        }
+        flex-grow: 1;
     }
 }

@@ -38,7 +38,7 @@ document.addEventListener("click", function(evt) {
         }
     }
 
-    if(element.type && element.type === "checkbox") {
+    if(element.type && element.classList.contains("multistate")) {
         checkReward(element);
         evt.stopPropagation();
     }
@@ -81,7 +81,7 @@ document.getElementById("change-theme").addEventListener("click", function(evt) 
 
 for(var select of document.querySelectorAll("#objectives-section select")) {
     select.addEventListener("change", function(evt) {
-        getSibling(evt.target, false).checked = false;
+        setState(getSibling(evt.target, false), states.none);
         checkObjectiveOptions();
     });
 }

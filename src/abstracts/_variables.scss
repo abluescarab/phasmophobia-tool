@@ -1,14 +1,16 @@
 // Main variables
-$font-size: 17px;
+$font-size: 16px;
 $small-font-size: .9em;
 $container-size: 800px;
-$margin: 10px;
+$margin: 15px;
+$container-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 
 // Misc. elements
 $multistate-size: 20px;
 $multistate-font-size: $multistate-size - 1px;
 $button-size: 30px;
 $flexbox-margin: $margin / 2;
+$border-color: #767676;
 
 // Donate button
 $donate-padding-left: $margin / 2;
@@ -20,9 +22,9 @@ $donate-border-width-large: 1px;
 $donate-border-width-small: .1px;
 
 // Light theme
-$light-bg: #FFFFF0;
+$light-element-bg: #fcfcfc;
 $light-link-color: #336699;
 
 // Dark theme
-$dark-bg: #2f3453;
+$dark-element-bg: #2d3035;
 $dark-link-color: #75d1ff;

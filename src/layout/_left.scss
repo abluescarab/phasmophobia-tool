@@ -1,6 +1,6 @@
 #left {
     @include desktop {
         width: calc(50% - #{$margin});
-        margin-right: $margin / 2;
+        margin-right: $margin;
     }
 }

@@ -1,5 +1,5 @@
 .dark-theme {
-    background-color: black;
+    background-color: #22252a;
     color: white;
 
     a {
@@ -10,29 +10,57 @@
         }
     }
 
+    #container {
+        background-color: $dark-element-bg;
+
+        & > div:first-of-type {
+            border-bottom: 1px solid $border-color;
+        }
+    }
+
     section {
-        background-color: $dark-bg;
-        border: 1px solid white;
+        background-color: $dark-element-bg;
+        border: 1px solid $border-color;
+        box-shadow: 0 0 7px rgba(0, 0, 0, .4);
+    }
+
+    select {
+        background-color: transparent;
+        color: white;
+        border: 1px solid $border-color;
+
+        option {
+            color: black;
+        }
+    }
+
+    input {
+        background-color: transparent;
+        color: white;
+        border: 1px solid $border-color;
     }
 
     footer {
-        background-color: $dark-bg;
-        border-top: 1px solid white;
+        background-color: $dark-element-bg;
     }
 
     .toggle {
         color: $dark-link-color;
     }
 
-    .multistate[data-state="no"] + label {
-        color: #bbb;
+    .multistate {
+        color: white;
+
+        &:not([data-state="none"]) {
+            background-color: $light-link-color;
+        }
+
+        &[data-state="no"] + label {
+            color: #bbb;
+        }
     }
 
     .info {
-        background-color: #a35129;
-    }
-
-    #container > div:first-of-type {
-        border-bottom: 1px solid white;
+        background-color: $light-link-color;
     }
 }

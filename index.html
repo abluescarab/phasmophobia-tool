@@ -20,22 +20,19 @@
 </head>
 <body class="light-theme">
     <div id="container">
-        <header>
+        <header class="row">
             <h1>Phasmophobia Tool</h1>
-
-            <div class="flexbox">
-                <a href="https://ko-fi.com/W7W2V072" target="_blank" id="donate"><img src="img/Ko-fi_logo_RGB_Outline.png" alt="Buy Me a Coffee at ko-fi.com" /><span>Donate</span></a>
-                <button id="reset" class="right-margin">Reset</button>
-            </div>
+            <a href="https://ko-fi.com/W7W2V072" target="_blank" id="donate"><img src="img/Ko-fi_logo_RGB_Outline.png" alt="Buy Me a Coffee at ko-fi.com" /><span>Donate</span></a>
+            <button id="reset">Reset</button>
         </header>
 
-        <div class="reflow">
+        <div class="row">
             <div class="right-margin">
                 <label for="ghost-name">Name:</label>
                 <input type="text" id="ghost-name"/>
             </div>
 
-            <form class="right-margin">
+            <form>
                 <input type="radio" name="ghost-group" id="unknown" checked/>
                 <label for="unknown">Unknown</label>
 
@@ -47,18 +44,18 @@
             </form>
         </div>
 
-        <div>
-            <div class="column" id="left">
+        <div class="row">
+            <div class="column">
                 <section>
                     <p class="section-title">Objectives <span data-state="no" data-toggle="#objectives-section" class="toggle">show section</span></p>
                     <div id="objectives-section" class="hidden">
-                        <div class="flexbox">
-                            <input type="checkbox" id="journal-objective"/>
+                        <div class="row">
+                            <button id="journal-objective" class="multistate material-icons" data-state="none" data-states="yes none"></button>
                             <label for="journal-objective">Enter ghost type in journal</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox"/>
+                        <div class="row">
+                            <button class="multistate material-icons" data-state="none" data-states="yes none"></button>
                             <select id="objective-1">
                                 <option>None</option>
                                 <option class="objective-event">Have a member of your team witness a Ghost Event</option>
@@ -75,8 +72,8 @@
                             </select>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox"/>
+                        <div class="row">
+                            <button class="multistate material-icons" data-state="none" data-states="yes none"></button>
                             <select id="objective-2">
                                 <option>None</option>
                                 <option class="objective-event">Have a member of your team witness a Ghost Event</option>
@@ -93,8 +90,8 @@
                             </select>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox"/>
+                        <div class="row">
+                            <button class="multistate material-icons" data-state="none" data-states="yes none"></button>
                             <select id="objective-3">
                                 <option>None</option>
                                 <option class="objective-event">Have a member of your team witness a Ghost Event</option>
@@ -111,8 +108,8 @@
                             </select>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="bone-objective"/>
+                        <div class="row">
+                            <button id="bone-objective" class="multistate material-icons" data-state="none" data-states="yes none"></button>
                             <label for="bone-objective">Pick up the bone</label>
                         </div>
                     </div>
@@ -120,42 +117,42 @@
 
                 <section id="evidence">
                     <p class="section-title">Evidence</p>
-                    <div class="flexbox">
-                        <button id="emf-level-5" class="multistate" data-state="none"></button>
+                    <div class="row">
+                        <button id="emf-level-5" class="multistate material-icons" data-state="none"></button>
                         <label for="emf-level-5">EMF Level 5</label>
                     </div>
 
-                    <div class="flexbox">
-                        <button id="spirit-box" class="multistate" data-state="none"></button>
+                    <div class="row">
+                        <button id="spirit-box" class="multistate material-icons" data-state="none"></button>
                         <label for="spirit-box">Spirit Box</label>
                     </div>
 
-                    <div class="flexbox">
-                        <button id="fingerprints" class="multistate" data-state="none"></button>
+                    <div class="row">
+                        <button id="fingerprints" class="multistate material-icons" data-state="none"></button>
                         <label for="fingerprints">Fingerprints</label>
                     </div>
 
-                    <div class="flexbox">
-                        <button id="ghost-orbs" class="multistate" data-state="none"></button>
+                    <div class="row">
+                        <button id="ghost-orbs" class="multistate material-icons" data-state="none"></button>
                         <label for="ghost-orbs">Ghost Orbs</label>
                     </div>
 
-                    <div class="flexbox">
-                        <button id="ghost-writing" class="multistate" data-state="none"></button>
+                    <div class="row">
+                        <button id="ghost-writing" class="multistate material-icons" data-state="none"></button>
                         <label for="ghost-writing">Ghost Writing</label>
                     </div>
 
-                    <div class="flexbox">
-                        <button id="freezing-temperatures" class="multistate" data-state="none"></button>
-                        <label for="freezing-temperatures">Freezing Temperatures</label>&nbsp;<a href="#" data-state="no" data-toggle="#help-freezing-temperatures" class="toggle">?</a>
+                    <div class="row">
+                        <button id="freezing-temperatures" class="multistate material-icons" data-state="none"></button>
+                        <label for="freezing-temperatures">Freezing Temperatures</label>&nbsp;<a data-state="no" data-toggle="#help-freezing-temperatures" class="toggle">?</a>
                         <p id="help-freezing-temperatures" class="info hidden">You will be able to see your breath.</p>
                     </div>
                 </section>
 
                 <section>
                     <p class="section-title">Possibilities <span data-state="no" data-toggle=".ghost-evidence" class="toggle">show evidence</span></p>
-                    <div class="flexbox ghost">
-                        <button id="spirit" class="multistate" data-states="none no" data-state="none"></button>
+                    <div class="row ghost">
+                        <button id="spirit" class="multistate material-icons" data-states="none no" data-state="none"></button>
                         <label for="spirit">Spirit</label>
                         <p class="ghost-evidence info hidden">
                             <span class="spirit-box">Spirit Box,</span>
@@ -164,8 +161,8 @@
                         </p>
                     </div>
 
-                    <div class="flexbox ghost">
-                        <button id="wraith" class="multistate" data-states="none no" data-state="none"></button>
+                    <div class="row ghost">
+                        <button id="wraith" class="multistate material-icons" data-states="none no" data-state="none"></button>
                         <label for="wraith">Wraith</label>
                         <p class="ghost-evidence info hidden">
                             <span class="spirit-box">Spirit Box,</span>
@@ -174,8 +171,8 @@
                         </p>
                     </div>
 
-                    <div class="flexbox ghost">
-                        <button id="phantom" class="multistate" data-states="none no" data-state="none"></button>
+                    <div class="row ghost">
+                        <button id="phantom" class="multistate material-icons" data-states="none no" data-state="none"></button>
                         <label for="phantom">Phantom</label>
                         <p class="ghost-evidence info hidden">
                             <span class="emf-level-5">EMF Level 5,</span>
@@ -184,8 +181,8 @@
                         </p>
                     </div>
 
-                    <div class="flexbox ghost">
-                        <button id="poltergeist" class="multistate" data-states="none no" data-state="none"></button>
+                    <div class="row ghost">
+                        <button id="poltergeist" class="multistate material-icons" data-states="none no" data-state="none"></button>
                         <label for="poltergeist">Poltergeist</label>
                         <p class="ghost-evidence info hidden">
                             <span class="spirit-box">Spirit Box,</span>
@@ -194,8 +191,8 @@
                         </p>
                     </div>
 
-                    <div class="flexbox ghost">
-                        <button id="banshee" class="multistate" data-states="none no" data-state="none"></button>
+                    <div class="row ghost">
+                        <button id="banshee" class="multistate material-icons" data-states="none no" data-state="none"></button>
                         <label for="banshee">Banshee</label>
                         <p class="ghost-evidence info hidden">
                             <span class="emf-level-5">EMF Level 5,</span>
@@ -204,8 +201,8 @@
                         </p>
                     </div>
 
-                    <div class="flexbox ghost">
-                        <button id="jinn" class="multistate" data-states="none no" data-state="none"></button>
+                    <div class="row ghost">
+                        <button id="jinn" class="multistate material-icons" data-states="none no" data-state="none"></button>
                         <label for="jinn">Jinn</label>
                         <p class="ghost-evidence info hidden">
                             <span class="emf-level-5">EMF Level 5,</span>
@@ -214,8 +211,8 @@
                         </p>
                     </div>
 
-                    <div class="flexbox ghost">
-                        <button id="mare" class="multistate" data-states="none no" data-state="none"></button>
+                    <div class="row ghost">
+                        <button id="mare" class="multistate material-icons" data-states="none no" data-state="none"></button>
                         <label for="mare">Mare</label>
                         <p class="ghost-evidence info hidden">
                             <span class="spirit-box">Spirit Box,</span>
@@ -224,8 +221,8 @@
                         </p>
                     </div>
 
-                    <div class="flexbox ghost">
-                        <button id="revenant" class="multistate" data-states="none no" data-state="none"></button>
+                    <div class="row ghost">
+                        <button id="revenant" class="multistate material-icons" data-states="none no" data-state="none"></button>
                         <label for="revenant">Revenant</label>
                         <p class="ghost-evidence info hidden">
                             <span class="emf-level-5">EMF Level 5,</span>
@@ -234,8 +231,8 @@
                         </p>
                     </div>
 
-                    <div class="flexbox ghost">
-                        <button id="shade" class="multistate" data-states="none no" data-state="none"></button>
+                    <div class="row ghost">
+                        <button id="shade" class="multistate material-icons" data-states="none no" data-state="none"></button>
                         <label for="shade">Shade</label>
                         <p class="ghost-evidence info hidden">
                             <span class="emf-level-5">EMF Level 5,</span>
@@ -244,8 +241,8 @@
                         </p>
                     </div>
 
-                    <div class="flexbox ghost">
-                        <button id="demon" class="multistate" data-states="none no" data-state="none"></button>
+                    <div class="row ghost">
+                        <button id="demon" class="multistate material-icons" data-states="none no" data-state="none"></button>
                         <label for="demon">Demon</label>
                         <p class="ghost-evidence info hidden">
                             <span class="spirit-box">Spirit Box,</span>
@@ -254,8 +251,8 @@
                         </p>
                     </div>
 
-                    <div class="flexbox ghost">
-                        <button id="yurei" class="multistate" data-states="none no" data-state="none"></button>
+                    <div class="row ghost">
+                        <button id="yurei" class="multistate material-icons" data-states="none no" data-state="none"></button>
                         <label for="yurei">Yurei</label>
                         <p class="ghost-evidence info hidden">
                             <span class="ghost-orbs">Ghost Orbs,</span>
@@ -264,8 +261,8 @@
                         </p>
                     </div>
 
-                    <div class="flexbox ghost">
-                        <button id="oni" class="multistate" data-states="none no" data-state="none"></button>
+                    <div class="row ghost">
+                        <button id="oni" class="multistate material-icons" data-states="none no" data-state="none"></button>
                         <label for="oni">Oni</label>
                         <p class="ghost-evidence info hidden">
                             <span class="emf-level-5">EMF Level 5,</span>
@@ -276,11 +273,11 @@
                 </section>
             </div>
 
-            <div class="column" id="right">
+            <div class="column">
                 <section>
                     <p class="section-title">Reward <span data-state="no" data-toggle="#reward-section" class="toggle">show section</span></p>
                     <div id="reward-section" class="hidden">
-                        <div class="grid">
+                        <div class="row">
                             <select id="difficulty" class="right-margin">
                                 <option value="1">Amateur</option>
                                 <option value="2">Intermediate</option>
@@ -308,45 +305,45 @@
                 <section>
                     <p class="section-title">Photo Evidence <span data-state="no" data-toggle="#photo-evidence-section" class="toggle">show section</span></p>
                     <div id="photo-evidence-section" class="hidden">
-                        <div class="flexbox">
-                            <input type="checkbox" id="photo-bone"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="photo-bone" data-state="none" data-states="yes none"></button>
                             <label for="photo-bone">Bone</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="photo-dirty-water"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="photo-dirty-water" data-state="none" data-states="yes none"></button>
                             <label for="photo-dirty-water">Dirty Water</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="photo-ghost-interaction"/>
-                            <label for="photo-ghost-interaction">Ghost Interaction</label>&nbsp;<a href="#" data-state="no" data-toggle="#help-ghost-interaction" class="toggle">?</a>
+                        <div class="row">
+                            <button class="multistate material-icons" id="photo-ghost-interaction" data-state="none" data-states="yes none"></button>
+                            <label for="photo-ghost-interaction">Ghost Interaction</label>&nbsp;<a data-state="no" data-toggle="#help-ghost-interaction" class="toggle">?</a>
                             <p id="help-ghost-interaction" class="info hidden">Ghost activities, hidden objects, signed Ghost Writing books, etc.</p>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="photo-ghost"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="photo-ghost" data-state="none" data-states="yes none"></button>
                             <label for="photo-ghost">Ghost</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="photo-fingerprints"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="photo-fingerprints" data-state="none" data-states="yes none"></button>
                             <label for="photo-fingerprints">Fingerprints</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="photo-footprints"/>
-                            <label for="photo-footprints">Footprints</label>&nbsp;<a href="#" data-state="no" data-toggle="#help-footprints" class="toggle">?</a>
+                        <div class="row">
+                            <button class="multistate material-icons" id="photo-footprints" data-state="none" data-states="yes none"></button>
+                            <label for="photo-footprints">Footprints</label>&nbsp;<a data-state="no" data-toggle="#help-footprints" class="toggle">?</a>
                             <p id="help-footprints" class="info hidden">Footprints will appear with UV when a ghost walks through salt.</p>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="photo-dead-body"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="photo-dead-body" data-state="none" data-states="yes none"></button>
                             <label for="photo-dead-body">Dead Body</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="photo-ouija-board"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="photo-ouija-board" data-state="none" data-states="yes none"></button>
                             <label for="photo-ouija-board">Ouija Board</label>
                         </div>
                     </div>
@@ -355,78 +352,78 @@
                 <section>
                     <p class="section-title">Used Equipment <span data-state="no" data-toggle="#used-equipment-section" class="toggle">show section</span></p>
                     <div id="used-equipment-section" class="hidden">
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-emf-reader"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-emf-reader" data-state="none" data-states="yes none"></button>
                             <label for="equipment-emf-reader">EMF Reader</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-spirit-box"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-spirit-box" data-state="none" data-states="yes none"></button>
                             <label for="equipment-spirit-box">Spirit Box</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-uv-flashlight"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-uv-flashlight" data-state="none" data-states="yes none"></button>
                             <label for="equipment-uv-flashlight">UV Flashlight</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-glow-stick"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-glow-stick" data-state="none" data-states="yes none"></button>
                             <label for="equipment-glow-stick">Glow Stick</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-video-camera"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-video-camera" data-state="none" data-states="yes none"></button>
                             <label for="equipment-video-camera">Video Camera</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-ghost-writing-book"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-ghost-writing-book" data-state="none" data-states="yes none"></button>
                             <label for="equipment-ghost-writing-book">Ghost Writing Book</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-thermometer"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-thermometer" data-state="none" data-states="yes none"></button>
                             <label for="equipment-thermometer">Thermometer</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-parabolic-microphone"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-parabolic-microphone" data-state="none" data-states="yes none"></button>
                             <label for="equipment-parabolic-microphone">Parabolic Microphone</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-motion-sensor"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-motion-sensor" data-state="none" data-states="yes none"></button>
                             <label for="equipment-motion-sensor">Motion Sensor</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-sound-sensor"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-sound-sensor" data-state="none" data-states="yes none"></button>
                             <label for="equipment-sound-sensor">Sound Sensor</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-ir-sensor"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-ir-sensor" data-state="none" data-states="yes none"></button>
                             <label for="equipment-ir-sensor">Infrared Light Sensor</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-smudge-stick"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-smudge-stick" data-state="none" data-states="yes none"></button>
                             <label for="equipment-smudge-stick">Smudge Stick</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-crucifix"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-crucifix" data-state="none" data-states="yes none"></button>
                             <label for="equipment-crucifix">Crucifix</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-salt"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-salt" data-state="none" data-states="yes none"></button>
                             <label for="equipment-salt">Salt</label>
                         </div>
 
-                        <div class="flexbox">
-                            <input type="checkbox" id="equipment-sanity-pills"/>
+                        <div class="row">
+                            <button class="multistate material-icons" id="equipment-sanity-pills" data-state="none" data-states="yes none"></button>
                             <label for="equipment-sanity-pills">Sanity Pills</label>
                         </div>
                     </div>
