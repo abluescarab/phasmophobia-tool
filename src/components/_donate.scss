@@ -2,8 +2,8 @@ a#donate {
     background-color: #FBAA19;
     color: black;
     text-decoration: none;
-    border: $donate-border-width-small solid black;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
 
     min-width: 100px - $donate-padding-left - $donate-padding-right - ($donate-border-width-small * 2);
     margin-right: $margin;
@@ -24,8 +24,6 @@ a#donate {
     }
 
     @include desktop {
-        border-width: $donate-border-width-large;
-        border-radius: 3px;
         min-width: 100px - $donate-padding-left - $donate-padding-right - ($donate-border-width-large * 2);
 
         img, span {
