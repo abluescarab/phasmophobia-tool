@@ -2,26 +2,19 @@ function checkGhosts() {
     var buttons = [].slice.call(document.querySelectorAll("#evidence .multistate"));
     var elements = [].slice.call(document.getElementsByClassName("ghost"));
 
+    var included = buttons.filter(b => b.dataset.state === states.yes.data).map(b => b.id);
+    var excluded = buttons.filter(b => b.dataset.state === states.no.data).map(b => b.id);
+
     for(var element of elements) {
-        var id = element.querySelector("button").id;
-        var included = buttons.filter(b => ghosts[id].includes(b.id));
-        var excluded = buttons.filter(b => !included.includes(b));
+        var key = element.getElementsByTagName("button")[0].id;
         var isExcluded = false;
 
-        for(var i = 0; i < excluded.length; i++) {
-            if(excluded[i].dataset.state === states.yes.data) {
-                isExcluded = true;
-                break;
-            }
+        if(included.length > 0 && !included.every(g => ghosts[key].includes(g))) {
+            isExcluded = true;
         }
 
-        if(!isExcluded) {
-            for(var i = 0; i < included.length; i++) {
-                if(included[i].dataset.state === states.no.data) {
-                    isExcluded = true;
-                    break;
-                }
-            }
+        if(!isExcluded && ghosts[key].some(e => excluded.indexOf(e) >= 0)) {
+            isExcluded = true;
         }
 
         if(isExcluded) {
@@ -29,11 +22,19 @@ function checkGhosts() {
         }
         else {
             element.style.display = "flex";
-
-            // var checked = included.filter(i => i.dataset.state === states.yes.data);
-            // var elems = [].slice.call(element.querySelectorAll("span")).filter(e => checked.contains(e.classList));
         }
     }
+
+    var spans = document.querySelectorAll(".ghost-evidence span");
+
+    spans.forEach(function(span) {
+        if([].some.call(span.classList, c => included.indexOf(c) >= 0)) {
+            span.classList.add("strike");
+        }
+        else {
+            span.classList.remove("strike");
+        }
+    });
 }
 
 function checkReward(element) {

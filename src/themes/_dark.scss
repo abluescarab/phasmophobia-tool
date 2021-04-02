@@ -56,8 +56,12 @@
         }
 
         &[data-state="no"] + label {
-            color: #bbb;
+            color: $dark-grayed-out;
         }
+    }
+
+    .strike {
+        color: $dark-grayed-out;
     }
 
     .info {

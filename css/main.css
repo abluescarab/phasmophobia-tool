@@ -134,6 +134,10 @@ section {
   border-radius: 1px;
 }
 
+.strike {
+  text-decoration: line-through;
+}
+
 .toggle {
   font-size: 0.9em;
   font-weight: normal;
@@ -352,7 +356,11 @@ header h1 {
 }
 
 .dark-theme .multistate[data-state="no"] + label {
-  color: #bbb;
+  color: #bbbbbb;
+}
+
+.dark-theme .strike {
+  color: #bbbbbb;
 }
 
 .dark-theme .info {
@@ -411,7 +419,11 @@ header h1 {
 }
 
 .light-theme .multistate[data-state="no"] + label {
-  color: #777;
+  color: #777777;
+}
+
+.light-theme .strike {
+  color: #777777;
 }
 
 .light-theme .info {
