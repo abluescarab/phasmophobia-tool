@@ -3,23 +3,27 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    box-shadow: $container-shadow;
-
     padding: ($margin / 2) $margin;
+    box-shadow: $container-shadow;
     line-height: $small-font-size;
 
-    p, a, button {
-        font-size: $small-font-size;
-    }
-
-    #footer-options {
-        text-align: right;
-        max-width: $container-size;
+    #footer-container {
+        width: $container-size + $margin * 4;
         margin: 0 auto;
-    }
+        display: flex;
+        flex-flow: column wrap;
 
-    #cookie-banner {
-        margin-top: $margin;
-        text-align: center;
+        #footer-text p:first-child {
+            flex-grow: 1;
+        }
+
+        p, a, button {
+            font-size: $small-font-size;
+        }
+
+        #cookie-banner {
+            margin-top: $margin;
+            text-align: center;
+        }
     }
 }
