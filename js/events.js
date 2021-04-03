@@ -10,7 +10,13 @@ document.addEventListener("DOMContentLoaded", function(evt) {
         changeTheme("dark");
     }
 
-    var sectionStates = getCookie(cookieNames.sectionStates)?.split(",");
+    var sectionStates = getCookie(cookieNames.sectionStates);
+
+    if(sectionStates === null) {
+        return;
+    }
+
+    sectionStates = sectionStates.split(",");
 
     if(sectionStates !== undefined) {
         var toggles = [].slice.call(document.querySelectorAll("[data-toggle$='section']"));
