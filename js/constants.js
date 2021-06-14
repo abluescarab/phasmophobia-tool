@@ -25,5 +25,7 @@ const ghosts = Object.freeze({
     shade: [evidence.emfLevel5, evidence.ghostWriting, evidence.ghostOrbs],
     demon: [evidence.ghostWriting, evidence.spiritBox, evidence.freezingTemperatures],
     yurei: [evidence.ghostWriting, evidence.freezingTemperatures, evidence.ghostOrbs],
-    oni: [evidence.emfLevel5, evidence.ghostWriting, evidence.spiritBox]
+    oni: [evidence.emfLevel5, evidence.ghostWriting, evidence.spiritBox],
+    hantu: [evidence.fingerprints, evidence.ghostOrbs, evidence.ghostWriting],
+    yokai: [evidence.spiritBox, evidence.ghostOrbs, evidence.ghostWriting]
 });
